@@ -3,32 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public Animator transition;
-    public Animator bubble;
+    //public Animator transition;
+    //public Animator bubble;
+    
     
     public void LoadLevel1()
     {
        // StartCoroutine ("Transition");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelA"); 
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1"); 
     }
 
     public void LoadLevel2()
     {
        // StartCoroutine ("Transition");
         UnityEngine.SceneManagement.SceneManager.LoadScene("LevelB"); 
-        
     }
     public void LoadMenu()
     {
         //StartCoroutine ("Transition");
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); 
-    }
-
-    public void LoadComic()
-    {
-        //StartCoroutine ("Transition");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Comic");
     }
 
     // IEnumerator Transition()
@@ -37,4 +30,11 @@ public class LoadScene : MonoBehaviour
     //    bubble.Play("Plane_Transition");
     //     yield return new WaitForSeconds(1f);
     // }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit(); 
+        }
+    }
 }

@@ -1,11 +1,24 @@
-﻿title: Start
+﻿
+title: Start
 ---
+///name of the player 
+<<declare $playerName = "a">>
+<<declare $pronoun1 = "they">>
+<<declare $pronoun2 = "them">>
+<<PlayerNameSet EventSystem>>
+<<PlayerPronounSet EventSystem>>
 Knot: Hello! 
-Player: oh hi. 
-Knot: How can I help you?
+{$playerName}: oh hi. 
+Knot: Hey Bobbin I was just talking to {$pronoun2} 
+Knot: How can help you?
 -> What is this place?
 -> Who is Tim? 
 -> Why?
-
 Knot: Sorry, no time to explain in this demo! 
+===
+title: Bobbin
+---
+Bobbin: Sup?
+{$playerName}: Hi. 
+Bobbin: I'm too tied up to talk in this demo! 
 ===

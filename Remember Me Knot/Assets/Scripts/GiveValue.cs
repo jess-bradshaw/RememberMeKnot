@@ -1,12 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI; 
+using TMPro; 
 
 public class GiveValue : MonoBehaviour
 {
-   [SerializeField] Text myText; 
+   [SerializeField] TMP_Text pronounText; 
+   [SerializeField] TMP_Text nameText; 
    public void Start()
    {
-        string newText = PlayerData.playerName; 
-        myText.text = newText; 
+        string nText = PlayerData.playerName; 
+        nameText.text = nText; 
+   }
+   public void testPronoun()
+   {
+        string newText = PlayerData.playerPronoun; 
+        pronounText.text = newText; 
    }
 }
