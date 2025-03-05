@@ -7,12 +7,14 @@ public class CustomizationCheck : MonoBehaviour
     [SerializeField] private GameObject pWarning;  
     [SerializeField] private GameObject nWarning;  
     [SerializeField] private LoadScene loadSceneScript; 
-    [SerializeField] TMP_Text nameInput; 
+    [SerializeField] private TMP_InputField nameInput; 
    
    public void CustCheck()
    {
+        bool isEqual = nameInput.text == "";
+        Debug.Log("text length["+ nameInput.text.Trim().Length + "] nameInput["+nameInput.text+"]");
         //if (PlayerData.playerName == "d3fault" || PlayerData.playerName == "" || PlayerData.playerName == " ")
-         if (nameInput.text =="")
+         if (isEqual)
         {
            nWarning.SetActive(true);
            Debug.Log( PlayerData.playerName);

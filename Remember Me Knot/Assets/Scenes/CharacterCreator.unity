@@ -1049,7 +1049,7 @@ MonoBehaviour:
   pWarning: {fileID: 2131844056}
   nWarning: {fileID: 1363517000}
   loadSceneScript: {fileID: 1331458330}
-  nameInput: {fileID: 554901253}
+  nameInput: {fileID: 1459590726}
 --- !u!1 &418356778
 GameObject:
   m_ObjectHideFlags: 0
