@@ -21,6 +21,7 @@ public class CustomizationCheck : MonoBehaviour
         }
         else if (PlayerData.playerName != "d3fault" && PlayerData.playerPronoun == "d3fault")
         {
+            nWarning.SetActive(false);
             pWarning.SetActive(true); 
             Debug.Log( "Name:" + PlayerData.playerName);
             Debug.Log("No pronoun:"+ PlayerData.playerPronoun);
@@ -29,8 +30,8 @@ public class CustomizationCheck : MonoBehaviour
         {
             pWarning.SetActive(false); 
             nWarning.SetActive(false); 
-            Debug.Log( "Name:" + PlayerData.playerName);
-            Debug.Log("pronoun:"+ PlayerData.playerPronoun);
+            Debug.Log( "Name: " + PlayerData.playerName);
+            Debug.Log("pronoun: "+ PlayerData.playerPronoun);
             Debug.Log("Loading"); 
             loadSceneScript.LoadLevel1(); 
         }
