@@ -1,20 +1,55 @@
 ﻿
-title: Start
+title: start
 ---
 ///name of the player 
 <<declare $playerName = "a">>
 <<declare $pronoun1 = "they">>
 <<declare $pronoun2 = "them">>
+<<declare $guide = "???">>
 <<PlayerNameSet EventSystem>>
 <<PlayerPronounSet EventSystem>>
-Knot: Hello! 
+//Start of dialogue 
+{$playerName}: Hello?
+{$guide}: Welcome to the glittersphere! 
 {$playerName}: oh hi. 
-Knot: Hey Bobbin I was just talking to {$pronoun2} 
-Knot: How can help you?
--> What is this place?
--> Who is Tim? 
--> Why?
-Knot: Sorry, no time to explain in this demo! 
+ <<jump introQuestions>>
+=== 
+title: introQuestions
+---
+-> What's the glittersphere?
+    <<jump GlittersphereIntro>>
+-> Who are you? 
+    {$playerName}: Who are you? 
+    <<jump whoAreYou>>
+-> What should I do? 
+    <<jump WhatShouldIDoIntro>>
+=== 
+title: whoAreYou
+---
+// check if the player has already asked this before route to another node. 
+<<GuideNameSet EventSystem>>
+{$guide}: Oh sorry, my name is Knot. What's yours?
+{$playerName}: I'm {$playerName}.
+{$guide}: Nice to meet you {$playerName}.
+===
+title: GlittersphereIntro
+---
+{$playerName}: What is a glittersphere.
+{$guide}: It's what we named this place when we arrived. 
+-> How long ago was that?
+    {$playerName}: How long ago was that?
+    {$guide}: Hmm... I'm not sure. Time gets a bit fuzzy. 
+-> We?
+    {$playerName}: Who do you mean by we? 
+    {$guide}: There's lots of us around and more arriving every day. 
+    //Check to see if they know players name if not jump to who are you. 
+===
+title: WhatShouldIDoIntro
+---
+{$playerName}: I'm not really sure what I should be doing.
+{$guide}: Well folks are always looking for a bit of help. 
+{$guide}: Try asking around to see if anyone is in a bind. 
+   //Check to see if they know players name if not jump to who are you. 
 ===
 title: Bobbin
 ---
