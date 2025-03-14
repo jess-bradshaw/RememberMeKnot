@@ -33,7 +33,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles.Example
                     ""name"": ""Talk"",
                     ""type"": ""Button"",
                     ""id"": ""5f0ea9ec-49c8-44de-82c0-65f65b09984b"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -220,7 +220,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles.Example
                     ""name"": ""Next Option"",
                     ""type"": ""Button"",
                     ""id"": ""0f8a3574-e071-4942-be8b-827d03cfc7e6"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -313,8 +313,8 @@ namespace Yarn.Unity.Addons.SpeechBubbles.Example
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bae64622-a463-492d-8877-0520e8a21faa"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""id"": ""2e4963b2-0481-41e6-8719-658db9dc5ab1"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""kbam"",
@@ -324,8 +324,8 @@ namespace Yarn.Unity.Addons.SpeechBubbles.Example
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2e4963b2-0481-41e6-8719-658db9dc5ab1"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""bae64622-a463-492d-8877-0520e8a21faa"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""kbam"",

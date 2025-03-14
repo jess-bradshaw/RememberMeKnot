@@ -1,8 +1,8 @@
 {
-    "name": "PlayerInput",
+    "name": "Movement",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "Player",
             "id": "038cd685-3522-4203-b55d-3b581fbeb268",
             "actions": [
                 {

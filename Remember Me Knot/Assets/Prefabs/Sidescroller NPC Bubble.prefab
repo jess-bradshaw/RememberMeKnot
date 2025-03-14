@@ -12,10 +12,6 @@ PrefabInstance:
       propertyPath: previewState.target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2161145437153410195, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2963578468650678183, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73,16 +69,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
-      propertyPath: m_margin.x
-      value: 0
+      propertyPath: m_fontSize
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_margin.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 642217db57c1b5e47a35bbf859703ab1, type: 2}
+    - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_fontSizeBase
-      value: 120
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 516189119786662769, guid: 642217db57c1b5e47a35bbf859703ab1, type: 2}
+    - target: {fileID: 4251580279270557294, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4446508768891094767, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_SizeDelta.x
@@ -98,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5100749781419895160, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_Name
-      value: Sidescroller Player Bubble
+      value: Sidescroller NPC Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 5100749781419895160, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_IsActive
@@ -294,6 +302,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8932209283533011408, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978088808441212697, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: defaultBubbleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 31ece893ce3f88a41be62d1f463d6ecd, type: 2}
+    - target: {fileID: 9207528323332550697, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0711abc5013d2b942aad4581f3734f04, type: 2}
+    - target: {fileID: 9207528323332550697, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7513854006998033819, guid: 0711abc5013d2b942aad4581f3734f04, type: 2}
+    - target: {fileID: 9207528323332550697, guid: e24bcf9ee65e241c394bd2e9e2012938, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

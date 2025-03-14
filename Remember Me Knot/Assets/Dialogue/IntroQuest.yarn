@@ -1,8 +1,85 @@
-﻿title: fakeStart
+﻿
+title: fakeStart2
 --- 
-No character 
+Player: No character 
 Bob: with character 
 -> option 1 
 -> option 2 
 -> option 3 
 ===
+title: start
+---
+///name of the player 
+<<declare $playerName = "a">>
+<<declare $pronoun1 = "they">>
+<<declare $pronoun2 = "them">>
+<<declare $guide = "???">>
+<<PlayerNameSet EventSystem>>
+<<PlayerPronounSet EventSystem>>
+<<set $askedName to false>>
+//Start of dialogue 
+Player: Hello?
+Guide: Welcome...
+Guide: to the glittersphere! 
+<<jump introQuestions>>
+Player: oh hi. 
+ 
+=== 
+title: introQuestions
+---
+-> What's the glittersphere?
+    <<jump GlittersphereIntro>>
+-> Who are you? 
+    Player: Who are you? 
+    <<jump whoAreYou>>
+-> What should I do? 
+    <<jump WhatShouldIDoIntro>>
+-> I'm good thanks. 
+=== 
+title: whoAreYou
+---
+<<if $askedName>>
+    <<jump AlreadyAskedName>> // check if the player has already asked this before route to another node.
+<<endif>> 
+<<GuideNameSet EventSystem>>
+<<set $askedName to true>>
+Guide: Oh sorry, my name is Knot. What's yours?
+Player: I'm {$playerName}.
+Guide: Nice to meet you {$playerName}.
+ <<jump introQuestions>>
+===
+title: AlreadyAskedName
+---
+Guide: I'm {$guide}, and you're {$playerName}. 
+Player: I just wanted to double check. 
+ <<jump introQuestions>>
+===
+title: GlittersphereIntro
+---
+Player: What is a glittersphere.
+Guide: It's what we named this place when we arrived. 
+-> How long ago was that?
+    Player: How long ago was that?
+    Guide: Hmm... I'm not sure. Time gets a bit fuzzy. 
+    <<jump introQuestions>>
+-> We?
+    Player: Who do you mean by we? 
+    Guide: There's lots of us around and more arriving every day. 
+    //Check to see if they know players name if not jump to who are you. 
+    <<jump introQuestions>>
+===
+title: WhatShouldIDoIntro
+---
+Player: I'm not really sure what I should be doing.
+Guide: Well folks are always looking for a bit of help. 
+Guide: Try asking around to see if anyone is in a bind. 
+   //Check to see if they know players name if not jump to who are you. 
+<<jump introQuestions>>
+===
+title: Bobbin
+---
+Bobbin: Sup?
+Player: Hi. 
+Bobbin: I'm too tied up to talk in this demo! 
+===
+

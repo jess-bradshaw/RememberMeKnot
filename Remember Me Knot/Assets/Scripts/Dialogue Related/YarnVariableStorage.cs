@@ -3,9 +3,6 @@ using Yarn.Unity;
 
 public class YarnVariableStorage : MonoBehaviour
 {
-   // public WispEmotion wispEmotions; // Reference to the WispEmotions script
-  //  public GameObject objectToDisable; // GameObject to disable
-  //  public GameObject objectToEnable;  // GameObject to enable
     public string playerName; 
     public string guideName; 
     public string playerPronoun1; 
@@ -15,7 +12,6 @@ public class YarnVariableStorage : MonoBehaviour
     public bool nameChecked; 
     public bool PronounSet; 
 
-   // public CutGrassMiniGame BramblesAreCut;
     public InMemoryVariableStorage variableStorage;
 
     void Update()

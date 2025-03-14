@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem; 
+using Yarn.Unity; 
 
 // inspired by https://www.youtube.com/watch?v=WNV9l04s8t4 & https://www.youtube.com/watch?v=T9PGE2m6ndo & https://www.youtube.com/watch?v=xHoRkZR61JQ tutorial 
 
@@ -10,15 +11,34 @@ public class PlayerController : MonoBehaviour
    private Vector2 movementInput; 
    private CharacterController characterController; 
    private Vector3 movementDirection; 
+   public DialogueRunner dialogueRunner; 
+   public GameObject playerInputObject; 
 
    [SerializeField] private float smoothTime = 0.05f; 
    private float _currentVelocity; 
    
    [SerializeField] private float speed; 
+   [Header("Action Maps")]
+       // [SerializeField]
+       // private string dialogueInputActionMap = "Dialogue";
+       // [SerializeField]
+       // private string movementInputActionMap = "Player";
+         [SerializeField] DialogueRunner? primaryDialogueRunner;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>(); 
+        var dialogueRunner = primaryDialogueRunner;
+        var playerInput = GetComponent<PlayerInput>();
+
+            dialogueRunner.onDialogueStart.AddListener(() =>
+            {
+               playerInputObject.SetActive(false); 
+         });
+           dialogueRunner.onDialogueComplete.AddListener(() =>
+            {
+               playerInputObject.SetActive(true); 
+            });
     }
 
    private void Update()
