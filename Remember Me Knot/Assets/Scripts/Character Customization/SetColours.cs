@@ -10,7 +10,7 @@ public class SetColours : MonoBehaviour
 
      void Awake()
      {
-        charactereyes.GetComponent<Renderer>().material.color = listOfColours[PlayerData.playerEyes];
-        characterhead.GetComponent<Renderer>().material.color = listOfColours[PlayerData.playerWoolColour];
+        charactereyes.GetComponent<Renderer>().material.color = listOfColours[PlayerData.scarfWoolColour];
+        characterhead.GetComponent<Renderer>().material.color = listOfColours[PlayerData.bodyWoolColour];
      }
 }

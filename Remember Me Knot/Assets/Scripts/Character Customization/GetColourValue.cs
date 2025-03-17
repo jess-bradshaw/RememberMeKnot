@@ -4,71 +4,132 @@ using UnityEngine.UI;
 
 public class GetColourValue : MonoBehaviour
 {
+    //Gameobjects to grab materials. 
     public GameObject characterhead;
-    public GameObject charactereyes;
-    public GameObject UIitem; 
-    public GameObject UIitem2; 
-    public int optionNumber; 
-    public int optionNumber2; 
+    public GameObject characterscarf;
+    public GameObject charactercoat;
+    public GameObject characterpom;
+    public GameObject characterhat;
+    // UI colour swatches 
+    public GameObject UIbody; 
+    public GameObject UIscarf; 
+    public GameObject UIcoat; 
+    public GameObject UIpom; 
+    public GameObject UIhat; 
+    // numbers to keep track of selection in the array 
+    public int bodyNumber; 
+    public int scarfNumber; 
+    public int coatNumber; 
+    public int pomNumber; 
+    public int hatNumber; 
     [SerializeField] public List<Color> listOfColours; 
 
      void Awake()
      {
        // listOfColours
-       optionNumber = 0;
-       ColourUpdate(); 
-        optionNumber2 = 0;
-       ColourUpdate2(); 
+         bodyNumber = 0;
+         BodyUpdate(); 
+         scarfNumber = 0;
+         ScarfUpdate(); 
+         coatNumber = 0;
+         CoatUpdate(); 
      }
-    public void ChangeColourRight()
+     public void GetColour()
     {
-       optionNumber ++; 
-        if (optionNumber > 25)
-       {
-        optionNumber = 0; 
-       }
-       ColourUpdate(); 
+       PlayerData.bodyWoolColour = bodyNumber; 
+       PlayerData.scarfWoolColour = scarfNumber; 
+       PlayerData.coatWoolColour = coatNumber; 
+       PlayerData.hatWoolColour = hatNumber; 
+       PlayerData.pomWoolColour = pomNumber; 
     }
-    public void ChangeColourLeft()
+    // Body related
+    public void BodyRight()
     {
-        optionNumber --; 
-       if (optionNumber<0)
-       {
-        optionNumber = 25; 
-       }
-       ColourUpdate(); 
+         bodyNumber ++; 
+         if (bodyNumber > 25){bodyNumber = 0;}
+         BodyUpdate();
     }
-    public void GetColour()
+    public void BodyLeft()
     {
-       PlayerData.playerWoolColour = optionNumber; 
-       PlayerData.playerEyes = optionNumber2; 
+         bodyNumber --; 
+         if (bodyNumber<0){bodyNumber = 25;}
+         BodyUpdate(); 
     }
-    public void ColourUpdate()
+    public void BodyUpdate()
     {
-       characterhead.GetComponent<Renderer>().material.color = listOfColours[optionNumber]; 
-        UIitem.GetComponent<Image>().color = listOfColours[optionNumber]; 
+       characterhead.GetComponent<Renderer>().material.color = listOfColours[bodyNumber]; 
+        UIbody.GetComponent<Image>().color = listOfColours[bodyNumber]; 
     }
-    public void ChangeColourRight2()
+    //Scarf related 
+    public void ScarfRight()
     {
-       optionNumber2 ++; 
-        if (optionNumber2 > 25)
-       {
-        optionNumber2 = 0; 
-       }
-       ColourUpdate2(); 
+         scarfNumber ++; 
+         if (scarfNumber > 25){scarfNumber = 0;}
+         ScarfUpdate(); 
     }
-    public void ChangeColourLeft2()
+    public void ScarfLeft()
     {
-        optionNumber2 --; 
-       if (optionNumber2<0)
-       {
-        optionNumber2 = 25; 
-       }
-       ColourUpdate2(); 
+         scarfNumber --; 
+         if (scarfNumber<0){scarfNumber = 25;}
+         ScarfUpdate(); 
     }
-    public void ColourUpdate2()
+    public void ScarfUpdate()
     {
-        charactereyes.GetComponent<Renderer>().material.color = listOfColours[optionNumber2];
-        UIitem2.GetComponent<Image>().color = listOfColours[optionNumber2]; 
+        characterscarf.GetComponent<Renderer>().material.color = listOfColours[scarfNumber];
+        UIscarf.GetComponent<Image>().color = listOfColours[scarfNumber]; 
+    }
+    //Coat Related
+        public void CoatRight()
+    {
+         coatNumber ++; 
+         if (coatNumber > 25){coatNumber = 0;}
+         CoatUpdate(); 
+    }
+    public void CoatLeft()
+    {
+         coatNumber --; 
+         if (coatNumber<0){coatNumber = 25;}
+         CoatUpdate(); 
+    }
+    public void CoatUpdate()
+    {
+        charactercoat.GetComponent<Renderer>().material.color = listOfColours[coatNumber];
+        UIcoat.GetComponent<Image>().color = listOfColours[coatNumber]; 
+    }
+     //Pom Related
+        public void PomRight()
+    {
+         pomNumber ++; 
+         if (pomNumber > 25){pomNumber = 0;}
+         PomUpdate(); 
+    }
+    public void PomLeft()
+    {
+         pomNumber --; 
+         if (pomNumber<0){pomNumber = 25;}
+         PomUpdate(); 
+    }
+    public void PomUpdate()
+    {
+        characterpom.GetComponent<Renderer>().material.color = listOfColours[pomNumber];
+        UIpom.GetComponent<Image>().color = listOfColours[pomNumber]; 
+    }
+     //Hat Related
+        public void HatRight()
+    {
+         hatNumber ++; 
+         if (hatNumber > 25){hatNumber = 0;}
+         HatUpdate(); 
+    }
+    public void HatLeft()
+    {
+         hatNumber --; 
+         if (hatNumber<0){hatNumber = 25;}
+         HatUpdate(); 
+    }
+    public void HatUpdate()
+    {
+        characterhat.GetComponent<Renderer>().material.color = listOfColours[hatNumber];
+        UIhat.GetComponent<Image>().color = listOfColours[hatNumber]; 
     }
 }

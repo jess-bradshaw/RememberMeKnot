@@ -10,7 +10,7 @@ public class SetPatternColours : MonoBehaviour
 
     void Awake()
     {
-        UIitem.GetComponent<Image>().color = listOfColours[PlayerData.playerEyes];
-        UIitem2.GetComponent<Image>().color = listOfColours[PlayerData.playerWoolColour];
+        UIitem.GetComponent<Image>().color = listOfColours[PlayerData.scarfWoolColour];
+        UIitem2.GetComponent<Image>().color = listOfColours[PlayerData.bodyWoolColour];
     }
 }
