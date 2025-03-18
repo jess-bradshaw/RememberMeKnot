@@ -69,13 +69,15 @@ public class GetColourValue : MonoBehaviour
     {
          scarfNumber ++; 
          if (scarfNumber > 24){scarfNumber = 0;}
+        Debug.Log(scarfNumber); 
          ScarfUpdate(); 
     }
     public void ScarfLeft()
     {
          scarfNumber --; 
          if (scarfNumber<0){scarfNumber = 24;}
-         ScarfUpdate(); 
+        Debug.Log(scarfNumber);
+        ScarfUpdate(); 
     }
     public void ScarfUpdate()
     {
