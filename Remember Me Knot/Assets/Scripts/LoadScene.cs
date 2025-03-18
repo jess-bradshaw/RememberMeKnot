@@ -16,7 +16,7 @@ public class LoadScene : MonoBehaviour
     public void LoadLevel2()
     {
        // StartCoroutine ("Transition");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelB"); 
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Pattern"); 
     }
     public void LoadMenu()
     {

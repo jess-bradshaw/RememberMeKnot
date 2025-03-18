@@ -4,13 +4,19 @@ using UnityEngine.UI;
 
 public class SetPatternColours : MonoBehaviour
 {
-    public GameObject UIitem;
-    public GameObject UIitem2;
+    public GameObject UIBody;
+    public GameObject UIHat;
+    public GameObject UIPom;
+    public GameObject UIScarf;
+    public GameObject UICoat;
     [SerializeField] public List<Color> listOfColours;
 
     void Awake()
     {
-        UIitem.GetComponent<Image>().color = listOfColours[PlayerData.scarfWoolColour];
-        UIitem2.GetComponent<Image>().color = listOfColours[PlayerData.bodyWoolColour];
+        UIBody.GetComponent<Image>().color = listOfColours[PlayerData.bodyWoolColour];
+        UIHat.GetComponent<Image>().color = listOfColours[PlayerData.hatWoolColour];
+        UIPom.GetComponent<Image>().color = listOfColours[PlayerData.pomWoolColour];
+        UIScarf.GetComponent<Image>().color = listOfColours[PlayerData.scarfWoolColour];
+        UICoat.GetComponent<Image>().color = listOfColours[PlayerData.coatWoolColour];
     }
 }

@@ -5,35 +5,34 @@ public class DialogueStarter : MonoBehaviour
 {
     [SerializeField] private string conversationStartNode; 
     public DialogueRunner dialogueRunner; 
-    public GameObject inputPopup; 
+    //public GameObject inputPopup; 
+    public bool inside; 
     
      private void OnTriggerEnter (Collider other)
     {
-        //check if the other collider is the player character 
-        if (other.CompareTag("Player") && dialogueRunner != null) 
-        { 
-            inputPopup.SetActive(true);
-        }
+       if (other.CompareTag("Player"))
+       {
+        inside = true; 
+       }
     }
-    private void OnTriggerStay (Collider other)
+    void OnTriggerStay(Collider other)
     {
         //check if the other collider is the player character 
-        if (other.CompareTag("Player") && dialogueRunner != null) 
+        if (dialogueRunner != null) 
         { 
             if(Input.GetKeyDown(KeyCode.F))
             {
             Debug.Log("F was pressed"); 
-            dialogueRunner.StartDialogue(conversationStartNode);
-            inputPopup.SetActive(false); 
+            dialogueRunner.StartDialogue(conversationStartNode); 
             }
         }
     }
      private void OnTriggerExit (Collider other)
     {
         //check if the other collider is the player character 
-        if (other.CompareTag("Player") && dialogueRunner != null) 
+        if (other.CompareTag("Player")) 
         { 
-            inputPopup.SetActive(false);
+            inside = false; 
         }
     }
 

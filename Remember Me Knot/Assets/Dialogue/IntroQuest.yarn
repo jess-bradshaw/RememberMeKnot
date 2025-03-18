@@ -1,5 +1,6 @@
 ﻿
 title: fakeStart2
+position: -232,-232
 --- 
 Player: No character 
 Bob: with character 
@@ -8,6 +9,7 @@ Bob: with character
 -> option 3 
 ===
 title: start
+position: 25,-239
 ---
 ///name of the player 
 <<declare $playerName = "a">>
@@ -26,6 +28,7 @@ Player: oh hi.
  
 === 
 title: introQuestions
+position: 25,-40
 ---
 -> What's the glittersphere?
     <<jump GlittersphereIntro>>
@@ -37,6 +40,7 @@ title: introQuestions
 -> I'm good thanks. 
 === 
 title: whoAreYou
+position: -271,268
 ---
 <<if $askedName>>
     <<jump AlreadyAskedName>> // check if the player has already asked this before route to another node.
@@ -49,12 +53,14 @@ Guide: Nice to meet you {$playerName}.
  <<jump introQuestions>>
 ===
 title: AlreadyAskedName
+position: -272,455
 ---
 Guide: I'm {$guide}, and you're {$playerName}. 
 Player: I just wanted to double check. 
  <<jump introQuestions>>
 ===
 title: GlittersphereIntro
+position: -18,272
 ---
 Player: What is a glittersphere.
 Guide: It's what we named this place when we arrived. 
@@ -69,6 +75,7 @@ Guide: It's what we named this place when we arrived.
     <<jump introQuestions>>
 ===
 title: WhatShouldIDoIntro
+position: 227,267
 ---
 Player: I'm not really sure what I should be doing.
 Guide: Well folks are always looking for a bit of help. 
@@ -76,10 +83,46 @@ Guide: Try asking around to see if anyone is in a bind.
    //Check to see if they know players name if not jump to who are you. 
 <<jump introQuestions>>
 ===
-title: Bobbin
+title: bobbin
+position: 582,-227
 ---
-Bobbin: Sup?
 Player: Hi. 
-Bobbin: I'm too tied up to talk in this demo! 
+Bobbin: Oh perfect, could you give me a hand? 
+Player: Sure?
+Bobbin: Thanks, I'm Bobbing by the way. 
+Bobbin: I'm tangled up in something.
+Bobbin: Stitch wants to cut things off. 
+Bobbin: I'm not really sure why. 
+Bobbin: Could you ask her for me? 
+Player: Seems easy enough. 
+Bobbin: Thanks!
+Bobbin: I'd rather not fret over split ends. 
 ===
-
+title: stitch
+position: 331,-227
+---
+Player: Hi. 
+Stitch: Hey?
+Player: Are you Stitch?
+Stitch: Yeah? 
+-> Are you mad at Bobbin?
+    Stitch: Why? 
+    -> Bobbin said you were. 
+    -> Well are you? 
+    -> Bobbin was worried. 
+-> Are you okay? 
+    Stitch: I guess.
+    Stitch: Not really. 
+    Player: What's wrong?
+-> Cool. I'm {$playerName}. 
+    Stitch: Okay.. hi? 
+===
+title: backStitch
+position: 331,-227
+---
+Player: Hi. 
+BackStitch: Hey
+-> I'm done. 
+    <<EndDemo EventSystem>>
+-> Nevermind. 
+===

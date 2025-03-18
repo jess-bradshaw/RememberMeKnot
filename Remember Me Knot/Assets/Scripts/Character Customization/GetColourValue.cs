@@ -33,6 +33,10 @@ public class GetColourValue : MonoBehaviour
          ScarfUpdate(); 
          coatNumber = 0;
          CoatUpdate(); 
+         pomNumber = 0;
+         PomUpdate(); 
+         hatNumber = 0;
+         HatUpdate(); 
      }
      public void GetColour()
     {
@@ -46,13 +50,13 @@ public class GetColourValue : MonoBehaviour
     public void BodyRight()
     {
          bodyNumber ++; 
-         if (bodyNumber > 25){bodyNumber = 0;}
+         if (bodyNumber > 24){bodyNumber = 0;}
          BodyUpdate();
     }
     public void BodyLeft()
     {
          bodyNumber --; 
-         if (bodyNumber<0){bodyNumber = 25;}
+         if (bodyNumber<0){bodyNumber = 24;}
          BodyUpdate(); 
     }
     public void BodyUpdate()
@@ -64,13 +68,13 @@ public class GetColourValue : MonoBehaviour
     public void ScarfRight()
     {
          scarfNumber ++; 
-         if (scarfNumber > 25){scarfNumber = 0;}
+         if (scarfNumber > 24){scarfNumber = 0;}
          ScarfUpdate(); 
     }
     public void ScarfLeft()
     {
          scarfNumber --; 
-         if (scarfNumber<0){scarfNumber = 25;}
+         if (scarfNumber<0){scarfNumber = 24;}
          ScarfUpdate(); 
     }
     public void ScarfUpdate()
@@ -82,13 +86,13 @@ public class GetColourValue : MonoBehaviour
         public void CoatRight()
     {
          coatNumber ++; 
-         if (coatNumber > 25){coatNumber = 0;}
+         if (coatNumber > 24){coatNumber = 0;}
          CoatUpdate(); 
     }
     public void CoatLeft()
     {
          coatNumber --; 
-         if (coatNumber<0){coatNumber = 25;}
+         if (coatNumber<0){coatNumber = 24;}
          CoatUpdate(); 
     }
     public void CoatUpdate()
@@ -100,13 +104,13 @@ public class GetColourValue : MonoBehaviour
         public void PomRight()
     {
          pomNumber ++; 
-         if (pomNumber > 25){pomNumber = 0;}
+         if (pomNumber > 24){pomNumber = 0;}
          PomUpdate(); 
     }
     public void PomLeft()
     {
          pomNumber --; 
-         if (pomNumber<0){pomNumber = 25;}
+         if (pomNumber<0){pomNumber = 24;}
          PomUpdate(); 
     }
     public void PomUpdate()
@@ -118,13 +122,13 @@ public class GetColourValue : MonoBehaviour
         public void HatRight()
     {
          hatNumber ++; 
-         if (hatNumber > 25){hatNumber = 0;}
+         if (hatNumber > 24){hatNumber = 0;}
          HatUpdate(); 
     }
     public void HatLeft()
     {
          hatNumber --; 
-         if (hatNumber<0){hatNumber = 25;}
+         if (hatNumber<0){hatNumber = 24;}
          HatUpdate(); 
     }
     public void HatUpdate()
