@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 6281444758373607200}
   - component: {fileID: 4774387171481409749}
   - component: {fileID: 480596091803892811}
-  - component: {fileID: 3947329924897132506}
   - component: {fileID: 3765857630718474478}
   - component: {fileID: 6824082759939994441}
+  - component: {fileID: 6356881140461471866}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -196,27 +196,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &3947329924897132506
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6886060655280709799}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 2, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3765857630718474478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +228,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationStartNode: stitch
   dialogueRunner: {fileID: 0}
-  inputPopup: {fileID: 8423108272864681570}
   inside: 0
+--- !u!135 &6356881140461471866
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886060655280709799}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7289371655373856420
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8423108272864681570}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.22325006, z: -0, w: 0.97476125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

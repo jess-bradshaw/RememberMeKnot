@@ -21,8 +21,8 @@ position: 25,-239
 <<set $askedName to false>>
 //Start of dialogue 
 Player: Hello?
-Guide: Welcome...
-Guide: to the glittersphere! 
+Guide: Welcome to the...
+Guide: glittersphere! 
 <<jump introQuestions>>
 Player: oh hi. 
  
@@ -33,7 +33,6 @@ position: 25,-40
 -> What's the glittersphere?
     <<jump GlittersphereIntro>>
 -> Who are you? 
-    Player: Who are you? 
     <<jump whoAreYou>>
 -> What should I do? 
     <<jump WhatShouldIDoIntro>>
@@ -62,24 +61,25 @@ Player: I just wanted to double check.
 title: GlittersphereIntro
 position: -18,272
 ---
-Player: What is a glittersphere.
-Guide: It's what we named this place when we arrived. 
+Guide: It's what we named this place. 
 -> How long ago was that?
     Player: How long ago was that?
-    Guide: Hmm... I'm not sure. Time gets a bit fuzzy. 
+    Guide: Hmm... I'm not sure. 
+    Guide: Time gets a bit fuzzy. 
     <<jump introQuestions>>
 -> We?
     Player: Who do you mean by we? 
-    Guide: There's lots of us around and more arriving every day. 
+    Guide: There's lots of us around 
+    Guide: and more arriving every day. 
     //Check to see if they know players name if not jump to who are you. 
     <<jump introQuestions>>
 ===
 title: WhatShouldIDoIntro
 position: 227,267
 ---
-Player: I'm not really sure what I should be doing.
-Guide: Well folks are always looking for a bit of help. 
-Guide: Try asking around to see if anyone is in a bind. 
+Guide: Lots of folks need help. 
+Guide: Bobbin is in a tangle
+Guide: Head straight, you'll find him. 
    //Check to see if they know players name if not jump to who are you. 
 <<jump introQuestions>>
 ===
@@ -89,14 +89,14 @@ position: 582,-227
 Player: Hi. 
 Bobbin: Oh perfect, could you give me a hand? 
 Player: Sure?
-Bobbin: Thanks, I'm Bobbing by the way. 
+Bobbin: Thanks, I'm Bobbin by the way. 
 Bobbin: I'm tangled up in something.
 Bobbin: Stitch wants to cut things off. 
 Bobbin: I'm not really sure why. 
 Bobbin: Could you ask her for me? 
 Player: Seems easy enough. 
 Bobbin: Thanks!
-Bobbin: I'd rather not fret over split ends. 
+Bobbin: I'm fretting over split ends!
 ===
 title: stitch
 position: 331,-227

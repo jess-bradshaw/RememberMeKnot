@@ -15,14 +15,14 @@ public class DialogueStarter : MonoBehaviour
         inside = true; 
        }
     }
-    void OnTriggerStay(Collider other)
+    private void Update()
     {
         //check if the other collider is the player character 
-        if (dialogueRunner != null) 
+        if (inside && dialogueRunner != null && !dialogueRunner.IsDialogueRunning) 
         { 
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-            Debug.Log("F was pressed"); 
+            Debug.Log("F was pressed "+ gameObject.name + " with conversationStartNode " + conversationStartNode); 
             dialogueRunner.StartDialogue(conversationStartNode); 
             }
         }
