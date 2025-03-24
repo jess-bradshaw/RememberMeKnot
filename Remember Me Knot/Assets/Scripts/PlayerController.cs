@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
    private CharacterController characterController; 
    private Vector3 movementDirection; 
    public DialogueRunner dialogueRunner; 
-   public GameObject playerInputObject; 
+   public GameObject playerInputObject;
+
+    [SerializeField] private Animator animator;
 
    [SerializeField] private float smoothTime = 0.05f; 
    private float _currentVelocity; 
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
 
    private void Update()
    {
+        // setting walk speed, so animations play
+        animator.SetFloat("Walk", movementInput.magnitude);
+        
         if(movementInput.sqrMagnitude == 0)
         {
             return;
