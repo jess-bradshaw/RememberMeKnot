@@ -126,3 +126,12 @@ BackStitch: Hey
     <<EndDemo EventSystem>>
 -> Nevermind. 
 ===
+title: fluffBug
+position: 331,-227
+---
+Player: Hi. 
+FluffBug: GARRRRR!
+-> Let's Fight!
+    <<CombatDemo EventSystem>>
+-> Nevermind. 
+===

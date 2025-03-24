@@ -21,7 +21,6 @@ public class YarnVariableStorage : MonoBehaviour
         variableStorage.SetValue("$pronoun2", playerPronoun2);
         variableStorage.SetValue("$guide", guideName);
         variableStorage.SetValue("$nameChecked", nameChecked);
-        //variableStorage.SetValue("$EndDemo", endDemo);
     }
 
     [YarnCommand("PlayerNameSet")]
@@ -71,5 +70,10 @@ public class YarnVariableStorage : MonoBehaviour
     public void EndTheDemo()
     {
          UnityEngine.SceneManagement.SceneManager.LoadScene("Pattern"); 
+    }
+[YarnCommand("CombatDemo")]
+    public void StartCombat()
+    {
+         UnityEngine.SceneManagement.SceneManager.LoadScene("Combat"); 
     }
 }
