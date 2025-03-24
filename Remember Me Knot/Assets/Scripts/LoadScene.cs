@@ -34,7 +34,11 @@ public class LoadScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit(); 
+            Quitting(); 
         }
     }
+   public void Quitting()
+   {
+    Application.Quit(); 
+   }
 }
