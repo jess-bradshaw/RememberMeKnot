@@ -46,7 +46,7 @@ position: -271,268
 <<endif>> 
 <<GuideNameSet EventSystem>>
 <<set $askedName to true>>
-Guide: Oh sorry, my name is Knot. What's yours?
+Guide: Oh sorry, my name is Terry. What's yours?
 Player: I'm {$playerName}.
 Guide: Nice to meet you {$playerName}.
  <<jump introQuestions>>
@@ -54,7 +54,7 @@ Guide: Nice to meet you {$playerName}.
 title: AlreadyAskedName
 position: -272,455
 ---
-Guide: I'm {$guide}, and you're {$playerName}. 
+Guide: I'm Terry, and you're {$playerName}. 
 Player: I just wanted to double check. 
  <<jump introQuestions>>
 ===
@@ -63,15 +63,12 @@ position: -18,272
 ---
 Guide: It's what we named this place. 
 -> How long ago was that?
-    Player: How long ago was that?
     Guide: Hmm... I'm not sure. 
     Guide: Time gets a bit fuzzy. 
     <<jump introQuestions>>
 -> We?
-    Player: Who do you mean by we? 
     Guide: There's lots of us around 
     Guide: and more arriving every day. 
-    //Check to see if they know players name if not jump to who are you. 
     <<jump introQuestions>>
 ===
 title: WhatShouldIDoIntro
@@ -79,8 +76,13 @@ position: 227,267
 ---
 Guide: Lots of folks need help. 
 Guide: Bobbin is in a tangle
-Guide: Head straight, you'll find him. 
-   //Check to see if they know players name if not jump to who are you. 
+Guide: There's a FluffBug in town
+-> Bobbin?
+    Guide: Head right, you'll find him. 
+-> FluffBug?
+    Guide: Nasty creatures. 
+    Guide: Head left
+    Guide: Be careful! 
 <<jump introQuestions>>
 ===
 title: bobbin
@@ -88,7 +90,15 @@ position: 582,-227
 ---
 Player: Hi. 
 Bobbin: Oh perfect, could you give me a hand? 
-Player: Sure?
+// check to see if Terry sent 
+// <<if $terrySent>>
+//Player: Terry sent me
+Bobbin: Really? Are you sure?
+//<<endif>> 
+-> Yes. 
+-> I guess. 
+-> Actually no. 
+    <<jump bobbinNo>>
 Bobbin: Thanks, I'm Bobbin by the way. 
 Bobbin: I'm tangled up in something.
 Bobbin: Stitch wants to cut things off. 
@@ -97,6 +107,13 @@ Bobbin: Could you ask her for me?
 Player: Seems easy enough. 
 Bobbin: Thanks!
 Bobbin: I'm fretting over split ends!
+===
+title: bobbinNo
+position: 582,-227
+---
+Bobbin: Oh darn.
+Bobbin: If you change your mind let me know. 
+Bobbin: I'm unraveling over this. 
 ===
 title: stitch
 position: 331,-227
@@ -134,4 +151,14 @@ FluffBug: GARRRRR!
 -> Let's Fight!
     <<CombatDemo EventSystem>>
 -> Nevermind. 
+===
+title: cali
+position: 331,-227
+---
+Cali: Help!
+FluffBug: GARRRRR!
+Cali: Rip it apart! 
+-> I'll protect you!
+    <<CombatDemo EventSystem>>
+-> Maybe later
 ===

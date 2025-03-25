@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+//Code by Keely Brown
 public class PlayerCombat : MonoBehaviour
 {
     public enum State
@@ -66,6 +67,7 @@ public class PlayerCombat : MonoBehaviour
     private List<PlayerCombatConnectionData> actionQueue = new List<PlayerCombatConnectionData>();
 
     private PlayerCombatConnectionData lastResolvedConnection = null;
+     [SerializeField] private Animator animator; //Jess Added this. 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -173,15 +175,18 @@ public class PlayerCombat : MonoBehaviour
                 {
                     case CombatActionData.ActionType.attack:
                         enemyCombat.ApplyDamage(combatAction.actionValue);
+                         animator.SetBool("Swipe", true);
+                        Debug.Log("I do damage!"); // Jess Added this.
                         break;
                     case CombatActionData.ActionType.defend:
+                        animator.SetBool("Swipe", false);
                         ApplyDefense(combatAction.actionValue);
                         break;
                     case CombatActionData.ActionType.heal:
                         ApplyHeal(combatAction.actionValue);
                         break;
                 }
-
+                     
                 //Remove the current node from the queue
                 actionQueue.RemoveAt(0);
             }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+//Code by Keely Brown
 public class EnemyCombat : MonoBehaviour
 {
     public enum State
