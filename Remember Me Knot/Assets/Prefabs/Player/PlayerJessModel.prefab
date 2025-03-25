@@ -66,6 +66,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 952603d256dd990448e2c8932c566985, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8909778284760799284}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952603d256dd990448e2c8932c566985, type: 3}
+--- !u!4 &1072903438721579604 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 952603d256dd990448e2c8932c566985, type: 3}
+  m_PrefabInstance: {fileID: 678089175940341183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8948473624194809823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1072903438721579604}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3215555783603854218, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_Name
+      value: Face
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_Name
+      value: Hood
+      objectReference: {fileID: 0}
+    - target: {fileID: -391268320553695201, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_Name
+      value: Scarf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_Name
+      value: PlayerParts
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+      propertyPath: m_Name
+      value: HatPom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+--- !u!4 &8909778284760799284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2fbdf1a02f7cf7458959114911bc777, type: 3}
+  m_PrefabInstance: {fileID: 8948473624194809823}
+  m_PrefabAsset: {fileID: 0}
