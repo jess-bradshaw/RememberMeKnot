@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+//Code by Keely Brown
 public class CombatController : Singleton<CombatController>
 {
     public enum CombatState
     {
-        player_turn, enemy_turn
+        player_turn, enemy_turn, finished
     }
     public CombatState currentState => _currentState;
     private CombatState _currentState = CombatState.player_turn;
@@ -81,5 +81,11 @@ public class CombatController : Singleton<CombatController>
             return actionTemplateMap[actionType].actionName;
         }
         return "";
+    }
+     public void TriggerEnemyDefeat()
+    {
+        _currentState = CombatState.finished;
+        playerCombat.Finish();
+        enemyCombat.Finish();
     }
 }

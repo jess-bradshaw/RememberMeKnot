@@ -40,6 +40,8 @@ public class EnemyCombat : MonoBehaviour
     private List<EnemyCombatData> actionQueue = new List<EnemyCombatData>();
 
     private EnemyCombatData lastResolvedAction;
+     [SerializeField]
+    private GameObject victoryUI; 
 
     public void Initialize()
     {
@@ -124,20 +126,32 @@ public class EnemyCombat : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
+       
         if (currentDefense > 0)
         {
             int temp = currentDefense;
             currentDefense -= damage;
             damage -= temp;
-            
+        
             if (damage < 0)
             {
                 UpdateStats();
+                if(currentHealth <=0)
+                {
+                    CombatController.Instance.TriggerEnemyDefeat();
+                    victoryUI.SetActive(true);
+                }
                 return;
             }
         }
         currentHealth -= damage;
         UpdateStats();
+
+        if(currentHealth <=0)
+        {
+            CombatController.Instance.TriggerEnemyDefeat();
+            victoryUI.SetActive(true);
+        }
     }
 
     public void ApplyHeal(int heal)
@@ -159,5 +173,10 @@ public class EnemyCombat : MonoBehaviour
             defenseText.text = currentDefense.ToString() + " Defense";
             defenseText.gameObject.SetActive(true);
         }
+    }
+
+   public void Finish()
+    {
+        _currentState = State.inactive;
     }
 }

@@ -175,11 +175,11 @@ public class PlayerCombat : MonoBehaviour
                 {
                     case CombatActionData.ActionType.attack:
                         enemyCombat.ApplyDamage(combatAction.actionValue);
-                         animator.SetBool("Swipe", true);
+                         animator.SetTrigger("Attack");
                         Debug.Log("I do damage!"); // Jess Added this.
                         break;
                     case CombatActionData.ActionType.defend:
-                        animator.SetBool("Swipe", false);
+                        //animator.SetBool("Swipe", false);
                         ApplyDefense(combatAction.actionValue);
                         break;
                     case CombatActionData.ActionType.heal:
@@ -324,5 +324,9 @@ public class PlayerCombat : MonoBehaviour
             availableActionIndicators[i].SetActive(true);
         }
 
+    }
+  public void Finish()
+    {
+        _currentState = State.inactive;
     }
 }
