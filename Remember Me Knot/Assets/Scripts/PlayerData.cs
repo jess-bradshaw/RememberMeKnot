@@ -9,5 +9,6 @@ public class PlayerData : MonoBehaviour
     public static int hatWoolColour; 
     public static int scarfWoolColour; 
     public static int coatWoolColour; 
-
+    public static bool mandatoryFightComplete; 
+    public static bool optionalFightComplete; 
 }
