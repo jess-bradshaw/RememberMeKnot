@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9fbcb2ae-d92d-48ae-af01-dea6725408e5}">
+		<property name="assetPath">
+			<value>686543__troube__pong-sound-effect-ui-button.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.3395918367346939</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{02d0d437-88f4-4e28-be38-fa70c54355a6}</destination>
+		</relationship>
+	</object>
+</objects>

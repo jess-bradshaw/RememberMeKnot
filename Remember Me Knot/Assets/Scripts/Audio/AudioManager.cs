@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
   private void Start()
   {
       
-        bMusic = FMODUnity.RuntimeManager.CreateInstance("event:/BackgroundMusic"); 
+        bMusic = FMODUnity.RuntimeManager.CreateInstance("event:/BackgroundMusic/BackgroundMusic"); 
         bMusic.start(); 
        // AmbienceSounds = FMODUnity.RuntimeManager.CreateInstance("event:/Background/BakingSounds"); 
       //  AmbienceSounds.start(); 
