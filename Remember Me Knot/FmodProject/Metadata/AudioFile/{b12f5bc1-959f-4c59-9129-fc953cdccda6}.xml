@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b12f5bc1-959f-4c59-9129-fc953cdccda6}">
+		<property name="assetPath">
+			<value>567204__sergequadrado__announcement-sound-4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8371655328798187</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{51693e14-b05c-4a77-8a9b-4f6782401747}</destination>
+		</relationship>
+	</object>
+</objects>
