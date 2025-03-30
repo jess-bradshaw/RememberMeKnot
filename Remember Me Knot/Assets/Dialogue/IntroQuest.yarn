@@ -163,3 +163,36 @@ Cali: Rip it apart!
     <<CombatDemo EventSystem>>
 -> Maybe later
 ===
+title: Minky
+position: 331,-227
+---
+Player: Hi 
+Minky: Hey, finger guns 
+-> Did you just say finger guns?
+    Minky: Yeah, I'd do them but
+    Minky: can't really move my hands.
+    Player: Can I help?
+    Minky: No thanks. 
+-> You doing okay?
+    Minky: Yeah, little pinned.
+    -> Why are you pinned?
+        Minky: Got finger gun happy. 
+        Player: So you got pinned?
+        Minky: Yeah. They were too deadly. 
+        Player: Your finger guns?
+        Minky: Yeah.
+    -> Do you need help?
+        Minky: I'm good.
+        Player: You sure?
+        Minky: Yeah.
+        Minky: Going to think about things. 
+        Player: Want to talk about it?
+        Minky: Maybe another time. 
+-> Are you Stitch?
+    Minky: Nah name's Minky. 
+    Minky: What's yours?
+    Player: I'm {$playerName}.
+    Minky: Nice to meet you {$playerName}!
+    Minky: Stitch was over by a tree. 
+    Player: Okay thanks. 
+===

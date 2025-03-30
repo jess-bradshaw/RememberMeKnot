@@ -67,8 +67,10 @@ public class PlayerCombat : MonoBehaviour
     private List<PlayerCombatConnectionData> actionQueue = new List<PlayerCombatConnectionData>();
 
     private PlayerCombatConnectionData lastResolvedConnection = null;
-     [SerializeField] private Animator animator; //Jess Added this. 
-
+     //Jess Added these:
+     [SerializeField] private Animator animator; 
+     [SerializeField] private GameObject HealEffect;
+     [SerializeField] private GameObject DefenseEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -174,16 +176,20 @@ public class PlayerCombat : MonoBehaviour
                 switch (combatAction.actionType)
                 {
                     case CombatActionData.ActionType.attack:
-                        enemyCombat.ApplyDamage(combatAction.actionValue);
-                         animator.SetTrigger("Attack");
-                        Debug.Log("I do damage!"); // Jess Added this.
+                        animator.SetTrigger("Attack"); // Jess Added this.
+                        enemyCombat.ApplyDamage(combatAction.actionValue); 
+                        HealEffect.SetActive(false); 
+                        DefenseEffect.SetActive(false); 
                         break;
                     case CombatActionData.ActionType.defend:
-                        //animator.SetBool("Swipe", false);
+                        DefenseEffect.SetActive(true); 
                         ApplyDefense(combatAction.actionValue);
+                        HealEffect.SetActive(false); 
                         break;
                     case CombatActionData.ActionType.heal:
+                        HealEffect.SetActive(true); 
                         ApplyHeal(combatAction.actionValue);
+                        DefenseEffect.SetActive(false); 
                         break;
                 }
                      
