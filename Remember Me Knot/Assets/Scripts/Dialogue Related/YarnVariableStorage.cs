@@ -12,6 +12,8 @@ public class YarnVariableStorage : MonoBehaviour
     public bool nameChecked; 
     public bool PronounSet; 
 
+    public GameObject checkpoint1; 
+
     public InMemoryVariableStorage variableStorage;
 
     void Update()
@@ -75,5 +77,10 @@ public class YarnVariableStorage : MonoBehaviour
     public void StartCombat()
     {
          UnityEngine.SceneManagement.SceneManager.LoadScene("Combat"); 
+    }
+[YarnCommand("Checkpoint1Cleared")]
+    public void ClearCheck1()
+    {
+        checkpoint1.SetActive(false); 
     }
 }

@@ -37,6 +37,7 @@ position: 25,-40
 -> What should I do? 
     <<jump WhatShouldIDoIntro>>
 -> I'm good thanks. 
+    <<Checkpoint1Cleared EventSystem>>
 === 
 title: whoAreYou
 position: -271,268
