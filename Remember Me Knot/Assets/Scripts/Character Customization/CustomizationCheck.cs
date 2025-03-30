@@ -17,22 +17,25 @@ public class CustomizationCheck : MonoBehaviour
          if (isEqual)
         {
            nWarning.SetActive(true);
-           Debug.Log( PlayerData.playerName);
+           //Debug.Log( PlayerData.playerName);
+           AudioManager.instance.PlayOneShot(FMODEvents.instance.BackButton, this.transform.position);
         }
         else if (PlayerData.playerName != "d3fault" && PlayerData.playerPronoun == "d3fault")
         {
             nWarning.SetActive(false);
             pWarning.SetActive(true); 
-            Debug.Log( "Name:" + PlayerData.playerName);
-            Debug.Log("No pronoun:"+ PlayerData.playerPronoun);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.BackButton, this.transform.position);
+            //Debug.Log( "Name:" + PlayerData.playerName);
+            //Debug.Log("No pronoun:"+ PlayerData.playerPronoun);
         }
         else
         {
             pWarning.SetActive(false); 
             nWarning.SetActive(false); 
-            Debug.Log( "Name: " + PlayerData.playerName);
-            Debug.Log("pronoun: "+ PlayerData.playerPronoun);
-            Debug.Log("Loading"); 
+            //Debug.Log( "Name: " + PlayerData.playerName);
+            //Debug.Log("pronoun: "+ PlayerData.playerPronoun);
+            //Debug.Log("Loading"); 
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ContinueButton, this.transform.position); 
             loadSceneScript.LoadLevel1(); 
         }
    }

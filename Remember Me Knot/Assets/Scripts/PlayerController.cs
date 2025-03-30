@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem; 
 using Yarn.Unity; 
-
+using FMOD.Studio; 
+using System.Collections;
+using System.Collections.Generic;
 // inspired by https://www.youtube.com/watch?v=WNV9l04s8t4 & https://www.youtube.com/watch?v=T9PGE2m6ndo & https://www.youtube.com/watch?v=xHoRkZR61JQ tutorial 
 
 [RequireComponent(typeof(CharacterController))] //This is prevents removing character controller. Learning something new! 
 
+
 public class PlayerController : MonoBehaviour
 {
+   public static AudioManager instance {get; private set;}
    private Vector2 movementInput; 
    private CharacterController characterController; 
    private Vector3 movementDirection; 
@@ -27,6 +31,8 @@ public class PlayerController : MonoBehaviour
        // private string movementInputActionMap = "Player";
          [SerializeField] DialogueRunner? primaryDialogueRunner;
 
+    private EventInstance playerFootsteps; 
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>(); 
@@ -41,8 +47,12 @@ public class PlayerController : MonoBehaviour
             {
                playerInputObject.SetActive(true); 
             });
+            //FindObjectOfType<Instance>
     }
-
+    private void Start()
+    {
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.FootSteps); 
+    }
    private void Update()
    {
         // setting walk speed, so animations play
@@ -57,7 +67,10 @@ public class PlayerController : MonoBehaviour
         var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _currentVelocity, smoothTime); 
         transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f); 
         characterController.Move(movementDirection * speed * Time.deltaTime);
-
+   }
+   private void FixedUpdate()
+   {
+    UpdateSound(); 
    }
 
    public void Move(InputAction.CallbackContext context)
@@ -65,4 +78,21 @@ public class PlayerController : MonoBehaviour
         movementInput = context.ReadValue<Vector2>();
         movementDirection = new Vector3(movementInput.x, 0.0f, movementInput.y); 
    }
+
+   private void UpdateSound ()
+    {
+        if(movementInput.magnitude !=0 )
+        {
+            PLAYBACK_STATE playbackState; 
+            playerFootsteps.getPlaybackState ( out playbackState); 
+            if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start(); 
+            }
+        }
+        else 
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT); 
+        }
+    }
 }

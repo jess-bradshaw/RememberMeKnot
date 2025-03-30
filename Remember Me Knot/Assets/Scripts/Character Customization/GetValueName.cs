@@ -11,7 +11,7 @@ public class GetValueName : MonoBehaviour
         PlayerData.playerName = "d3fault"; 
         Debug.Log( PlayerData.playerName); 
         PlayerData.playerPronoun = "d3fault"; 
-        Debug.Log( "Awake pronoun:"+ PlayerData.playerPronoun); 
+       // Debug.Log( "Awake pronoun:"+ PlayerData.playerPronoun); 
     }
     
     
@@ -20,7 +20,7 @@ public class GetValueName : MonoBehaviour
         string playerName = nameInput.text; 
         PlayerData.playerName = playerName; 
 
-        Debug.Log("Name is: "+ PlayerData.playerName); 
-        Debug.Log("Pronouns are: " + PlayerData.playerPronoun); 
+        //Debug.Log("Name is: "+ PlayerData.playerName); 
+        //Debug.Log("Pronouns are: " + PlayerData.playerPronoun); 
     }
 }
