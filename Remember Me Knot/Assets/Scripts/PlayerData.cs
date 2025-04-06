@@ -11,4 +11,5 @@ public class PlayerData : MonoBehaviour
     public static int coatWoolColour; 
     public static bool mandatoryFightComplete; 
     public static bool optionalFightComplete; 
+    public static bool CombatDemoCheck; 
 }

@@ -7,22 +7,23 @@ position: 25,-239
 <<declare $pronoun1 = "they">>
 <<declare $pronoun2 = "them">>
 <<declare $guide = "???">>
+<<declare $combatDemoCleared = false >>
 <<PlayerNameSet EventSystem>>
 <<PlayerPronounSet EventSystem>>
 <<set $askedName to false>>
 //Start of dialogue 
+// ---------------------------------------------Terry Quests ------------------
 Guide: Welcome adventurer!
 Player: Hello! 
-Guide: Welcome to the...
-Guide: glittersphere! 
 <<jump introQuestions>>
 === 
 title: introQuestions
 position: 25,-40
 ---
+<<TutorialOptions EventSystem>>
 <<if $askedWhere == false>>
 -> Where am I? 
-    Guide: The Glittersphere! 
+    Guide: The Glittersphere!
     <<set $askedWhere to true>>
 -> Who are you? 
     <<jump whoAreYou>>
@@ -30,11 +31,11 @@ position: 25,-40
 <<if $askedWhere>>
 -> Glittersphere?
     <<jump GlittersphereIntro>>
--> Who are you? 
+-> Who are you?
     <<jump whoAreYou>>
--> What should I do? 
+-> What should I do?
     <<jump WhatShouldIDoIntro>>
--> Bye.
+-> Bye
 <<endif>>
 === 
 title: whoAreYou
@@ -74,16 +75,40 @@ Guide: It's what we named this place.
 title: WhatShouldIDoIntro
 position: 227,267
 ---
-Guide: Lots of folks need help. 
+Guide: Lots of folks need help
 Guide: Bobbin is in a tangle
+Guide: Minky is a hazard to himself 
+Guide: The golden scissors..
 -> Bobbin?
     Guide: Head right, you'll find him. 
+-> Minky?
+    Guide: Just don't touch him
+    Player: Why not? 
+    Guide: It's safer that way
+    Player: Hmm okay? 
+-> Golden Scissors? 
+    Guide: Yeah...
+    Player: Go on... 
+    Guide: They sort of went missing 
+    Player: Missing?
+    Guide: We have looked everywhere
+    -> Maybe I can help?
+        Guide: You are welcome to look for them
+    -> You said they were golden? 
+        Guide: Keep an eye out for them 
+    -> Good luck 
+    Guide: There is a rewards for them 
+    Player: What kind of reward? 
+    Guide: It's a mystery 
+    Guide: but likely something good! 
+    Player: Okay, maybe I'll find them. 
     <<Checkpoint1Cleared EventSystem>>
 <<jump introQuestions>>
 ===
 title: bobbin
 position: 582,-227
 ---
+// ---------------------------------------------Bobbin Quests ------------------
 <<if $StitchChat>>
 <<jump BobbinStitchComplete>>
 <<endif>>
@@ -161,10 +186,90 @@ Stitch: I'm sorry too.
 Stitch: {$playerName} helped
 Bobbin: Yeah {$pronoun1} helped me too. 
 <<Checkpoint2Cleared EventSystem>>
+//<<Quest2Complete EventSystem>>
+===
+
+title: cali
+position: 331,-227
+---
+// ---------------------------------------------Cali Combat Quests ------------------
+Cali: Help!
+FluffBug: GARRRRR!
+Cali: Rip it apart! 
+-> I'll protect you!
+    <<CombatDemo EventSystem>>
+-> Maybe later
+===
+title: cali2
+---
+Cali2: Thanks for saving me! 
+Player: Of course
+===
+title: Minky
+position: 331,-227
+---
+// ---------------------------------------------Minky ------------------
+Player: Hi 
+Minky: Hey, finger guns 
+<<if $BobbinQuest>>
+-> Are you Stitch?
+    Minky: Nah name's Minky. 
+    Minky: What's yours?
+    Player: I'm {$playerName}.
+    Minky: Nice to meet you {$playerName}!
+    Minky: Stitch was over by a tree. 
+    Player: Okay thanks. 
+-> Did you just say finger guns?
+    <<jump MinkyFingerGuns>> 
+-> You doing okay?
+    <<jump MinkyOkay>>
+<<endif>>
+<<if $BobbinQuest == false>>
+-> Did you just say finger guns?
+    <<jump MinkyFingerGuns>> 
+-> You doing okay?
+    <<jump MinkyOkay>>
+<<endif>>
+===
+title: MinkyFingerGuns
+---
+Minky: Yeah, I'd do them but
+Minky: can't really move my hands.
+Player: Can I help?
+Minky: No thanks. 
+===
+title: MinkyOkay
+---
+Minky: Yeah, little pinned.
+-> Why are you pinned?
+    Minky: Got finger gun happy. 
+    Player: So you got pinned?
+    Minky: Yeah. They were too deadly. 
+    Player: Your finger guns?
+    Minky: Yeah.
+-> Do you need help?
+    Minky: I'm good.
+    Player: You sure?
+    Minky: Yeah.
+    Minky: Going to think about things. 
+    Player: Want to talk about it?
+    Minky: Maybe another time. 
+===
+title: Twill
+position: 331,-227
+---
+// ---------------------------------------------Twill Optional Quests ------------------
+Twill: Fite me!
+BonusBug: GARRRRR!
+-> Let's fight
+    <<Combat1 EventSystem>>
+-> Let's talk this out. 
+// marker for talking instead. 
 ===
 title: backStitch
 position: 331,-227
 ---
+// ---------------------------------------------Demo Complete------------------
 Player: Hi. 
 BackStitch: Hey
 -> I'm done. 
@@ -179,57 +284,4 @@ FluffBug: GARRRRR!
 -> Let's Fight!
     <<CombatDemo EventSystem>>
 -> Nevermind. 
-===
-title: cali
-position: 331,-227
----
-Cali: Help!
-FluffBug: GARRRRR!
-Cali: Rip it apart! 
--> I'll protect you!
-    <<CombatDemo EventSystem>>
--> Maybe later
-===
-title: Minky
-position: 331,-227
----
-Player: Hi 
-Minky: Hey, finger guns 
--> Did you just say finger guns?
-    Minky: Yeah, I'd do them but
-    Minky: can't really move my hands.
-    Player: Can I help?
-    Minky: No thanks. 
--> You doing okay?
-    Minky: Yeah, little pinned.
-    -> Why are you pinned?
-        Minky: Got finger gun happy. 
-        Player: So you got pinned?
-        Minky: Yeah. They were too deadly. 
-        Player: Your finger guns?
-        Minky: Yeah.
-    -> Do you need help?
-        Minky: I'm good.
-        Player: You sure?
-        Minky: Yeah.
-        Minky: Going to think about things. 
-        Player: Want to talk about it?
-        Minky: Maybe another time. 
--> Are you Stitch?
-    Minky: Nah name's Minky. 
-    Minky: What's yours?
-    Player: I'm {$playerName}.
-    Minky: Nice to meet you {$playerName}!
-    Minky: Stitch was over by a tree. 
-    Player: Okay thanks. 
-===
-title: Twill
-position: 331,-227
----
-Twill: Fite me!
-BonusBug: GARRRRR!
--> Let's fight
-    <<CombatDemo EventSystem>>
--> Let's talk this out. 
-// marker for talking instead. 
 ===
