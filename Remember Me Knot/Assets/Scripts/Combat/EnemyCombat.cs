@@ -10,26 +10,19 @@ public class EnemyCombat : MonoBehaviour
     public State currentState => _currentState;
     private State _currentState = State.inactive;
 
-    [SerializeField]
-    private Transform actionIndicatorsHolder;
+    [SerializeField] private Transform actionIndicatorsHolder;
 
-    [SerializeField]
-    private GameObject actionIndicatorPrefab;
+    [SerializeField] private GameObject actionIndicatorPrefab;
 
-    [SerializeField]
-    private CombatActionData[] possibleCombatActions;
+    [SerializeField] private CombatActionData[] possibleCombatActions;
 
-    [SerializeField]
-    private TMPro.TMP_Text healthText, defenseText;
+    [SerializeField] private TMPro.TMP_Text healthText, defenseText;
 
-    [SerializeField]
-    private int numberOfActions = 2;
+    [SerializeField]private int numberOfActions = 2;
 
-    [SerializeField]
-    private PlayerCombat playerCombat;
+    [SerializeField] private PlayerCombat playerCombat;
 
-    [SerializeField]
-    private float actionResolveDuration;
+    [SerializeField] private float actionResolveDuration;
 
     private float timeOnResolvingAction = 0f;
 
@@ -40,8 +33,11 @@ public class EnemyCombat : MonoBehaviour
     private List<EnemyCombatData> actionQueue = new List<EnemyCombatData>();
 
     private EnemyCombatData lastResolvedAction;
-     [SerializeField]
-    private GameObject victoryUI; 
+     
+    //Jess Added these:
+     [SerializeField] private GameObject victoryUI; 
+     [SerializeField] private Animator animator; 
+     [SerializeField] private GameObject DefenseEffect;
 
     public void Initialize()
     {
@@ -98,7 +94,8 @@ public class EnemyCombat : MonoBehaviour
                         case CombatActionData.ActionType.attack:
                             playerCombat.ApplyDamage(combatAction.actionValue);
                             break;
-                        case CombatActionData.ActionType.defend:
+                        case CombatActionData.ActionType.defend: 
+                            DefenseEffect.SetActive(true);
                             ApplyDefense(combatAction.actionValue);
                             break;
                         case CombatActionData.ActionType.heal:
@@ -109,17 +106,15 @@ public class EnemyCombat : MonoBehaviour
                     //Remove the current node from the queue
                     actionQueue.RemoveAt(0);
                 }
-
-
                 timeOnResolvingAction = 0f;
+                //DefenseEffect.SetActive(false);
             }
         }
-
-        
     }
 
     public void ApplyDefense(int defense)
     {
+        
         currentDefense += defense;
         UpdateStats();
     }

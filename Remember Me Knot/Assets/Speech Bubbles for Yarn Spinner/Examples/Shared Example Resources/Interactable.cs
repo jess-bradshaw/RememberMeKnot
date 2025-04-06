@@ -66,6 +66,13 @@ namespace Yarn.Unity.Addons.SpeechBubbles.Example
            OnBecameActive(); 
         }
     }
+         private void OnTriggerExit(Collider collider)
+    {
+         if (collider.gameObject.tag == "Player")
+        {
+           OnBecameInactive(); 
+        }
+    }
 
         public void OnInteracted()
         {

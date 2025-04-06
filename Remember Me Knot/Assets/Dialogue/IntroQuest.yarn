@@ -1,13 +1,4 @@
 ﻿
-title: fakeStart2
-position: -232,-232
---- 
-Player: No character 
-Bob: with character 
--> option 1 
--> option 2 
--> option 3 
-===
 title: start
 position: 25,-239
 ---
@@ -20,24 +11,31 @@ position: 25,-239
 <<PlayerPronounSet EventSystem>>
 <<set $askedName to false>>
 //Start of dialogue 
-Player: Hello?
+Guide: Welcome adventurer!
+Player: Hello! 
 Guide: Welcome to the...
 Guide: glittersphere! 
 <<jump introQuestions>>
-Player: oh hi. 
- 
 === 
 title: introQuestions
 position: 25,-40
 ---
--> What's the glittersphere?
+<<if $askedWhere == false>>
+-> Where am I? 
+    Guide: The Glittersphere! 
+    <<set $askedWhere to true>>
+-> Who are you? 
+    <<jump whoAreYou>>
+<<endif>>
+<<if $askedWhere>>
+-> Glittersphere?
     <<jump GlittersphereIntro>>
 -> Who are you? 
     <<jump whoAreYou>>
 -> What should I do? 
     <<jump WhatShouldIDoIntro>>
--> I'm good thanks. 
-    <<Checkpoint1Cleared EventSystem>>
+-> Bye.
+<<endif>>
 === 
 title: whoAreYou
 position: -271,268
@@ -47,7 +45,8 @@ position: -271,268
 <<endif>> 
 <<GuideNameSet EventSystem>>
 <<set $askedName to true>>
-Guide: Oh sorry, my name is Terry. What's yours?
+Guide: Oh sorry, my name is Terry. 
+Guide: What's yours?
 Player: I'm {$playerName}.
 Guide: Nice to meet you {$playerName}.
  <<jump introQuestions>>
@@ -77,28 +76,22 @@ position: 227,267
 ---
 Guide: Lots of folks need help. 
 Guide: Bobbin is in a tangle
-Guide: There's a FluffBug in town
 -> Bobbin?
     Guide: Head right, you'll find him. 
--> FluffBug?
-    Guide: Nasty creatures. 
-    Guide: Head left
-    Guide: Be careful! 
+    <<Checkpoint1Cleared EventSystem>>
 <<jump introQuestions>>
 ===
 title: bobbin
 position: 582,-227
 ---
+<<if $StitchChat>>
+<<jump BobbinStitchComplete>>
+<<endif>>
 Player: Hi. 
-Bobbin: Oh perfect, could you give me a hand? 
-// check to see if Terry sent 
-// <<if $terrySent>>
-//Player: Terry sent me
-Bobbin: Really? Are you sure?
-//<<endif>> 
--> Yes. 
--> I guess. 
--> Actually no. 
+Bobbin: Could you give me a hand? 
+-> Sure. 
+-> Are you Bobbin?
+-> No. 
     <<jump bobbinNo>>
 Bobbin: Thanks, I'm Bobbin by the way. 
 Bobbin: I'm tangled up in something.
@@ -108,6 +101,7 @@ Bobbin: Could you ask her for me?
 Player: Seems easy enough. 
 Bobbin: Thanks!
 Bobbin: I'm fretting over split ends!
+<<set $BobbinQuest to true>>
 ===
 title: bobbinNo
 position: 582,-227
@@ -120,20 +114,53 @@ title: stitch
 position: 331,-227
 ---
 Player: Hi. 
-Stitch: Hey?
+Stitch: ...
+<<if $BobbinQuest>>
 Player: Are you Stitch?
 Stitch: Yeah? 
 -> Are you mad at Bobbin?
-    Stitch: Why? 
-    -> Bobbin said you were. 
-    -> Well are you? 
-    -> Bobbin was worried. 
--> Are you okay? 
-    Stitch: I guess.
-    Stitch: Not really. 
-    Player: What's wrong?
+    <<jump StitchDetails>>
 -> Cool. I'm {$playerName}. 
-    Stitch: Okay.. hi? 
+    Stitch: ...
+<<endif>> 
+<<if $BobbinQuest == false>>
+Player: Hi
+Stitch: What?
+-> Are you okay? 
+    Stitch: Leave me alone. 
+    Player: Umm okay. Bye.
+-> I'm {$playerName}. 
+    Stitch: ...
+    Player: And you are?
+    Stitch: ...
+<<endif>> 
+===
+title: StitchDetails
+position: 331,-227
+---
+Stitch: I'm not mad. 
+Player: No? 
+Stitch: Bobbin wants to break up.
+Player: Bobbin is worried about you. 
+Player: You two should talk. 
+<<set $StitchChat to true>>
+===
+title: BobbinStitchComplete
+position: 331,-227
+---
+//Add in call to move Stitch here. 
+Bobbin: Stitch! 
+Stitch: Hey Bobbin 
+Player: ... 
+Stitch: I-
+Bobbin: Before you do it 
+Bobbin: I'm sorry
+Stitch: Sorry? 
+Bobbin: Yeah.
+Stitch: I'm sorry too. 
+Stitch: {$playerName} helped
+Bobbin: Yeah {$pronoun1} helped me too. 
+<<Checkpoint2Cleared EventSystem>>
 ===
 title: backStitch
 position: 331,-227
@@ -195,4 +222,14 @@ Minky: Hey, finger guns
     Minky: Nice to meet you {$playerName}!
     Minky: Stitch was over by a tree. 
     Player: Okay thanks. 
+===
+title: Twill
+position: 331,-227
+---
+Twill: Fite me!
+BonusBug: GARRRRR!
+-> Let's fight
+    <<CombatDemo EventSystem>>
+-> Let's talk this out. 
+// marker for talking instead. 
 ===

@@ -71,11 +71,6 @@ public class PlayerCombat : MonoBehaviour
      [SerializeField] private Animator animator; 
      [SerializeField] private GameObject HealEffect;
      [SerializeField] private GameObject DefenseEffect;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
 
     public void Initialize()
     {
@@ -196,9 +191,8 @@ public class PlayerCombat : MonoBehaviour
                 //Remove the current node from the queue
                 actionQueue.RemoveAt(0);
             }
-
-
             timeOnResolvingAction = 0f;
+            //DefenseEffect.SetActive(false);
         }
     }
 

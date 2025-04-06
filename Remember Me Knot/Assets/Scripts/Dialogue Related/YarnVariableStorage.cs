@@ -13,6 +13,8 @@ public class YarnVariableStorage : MonoBehaviour
     public bool PronounSet; 
 
     public GameObject checkpoint1; 
+    public GameObject checkpoint2; 
+    public GameObject checkpoint3;
 
     public InMemoryVariableStorage variableStorage;
 
@@ -82,5 +84,15 @@ public class YarnVariableStorage : MonoBehaviour
     public void ClearCheck1()
     {
         checkpoint1.SetActive(false); 
+    }
+[YarnCommand("Checkpoint2Cleared")]
+    public void ClearCheck2()
+    {
+        checkpoint2.SetActive(false); 
+    }
+[YarnCommand("Checkpoint3Cleared")]
+    public void ClearCheck3()
+    {
+        checkpoint3.SetActive(false); 
     }
 }

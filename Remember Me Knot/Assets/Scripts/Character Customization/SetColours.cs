@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SetColours : MonoBehaviour
 {
-   public GameObject body;
+   public GameObject face;
    public GameObject hat;
    public GameObject pom;
    public GameObject scarf;
@@ -13,7 +13,7 @@ public class SetColours : MonoBehaviour
 
      void Awake()
      {
-        body.GetComponent<Renderer>().material.color = listOfColours[PlayerData.bodyWoolColour];
+       face.GetComponent<Renderer>().material.color = listOfColours[PlayerData.bodyWoolColour];
         hat.GetComponent<Renderer>().material.color = listOfColours[PlayerData.hatWoolColour];
         pom.GetComponent<Renderer>().material.color = listOfColours[PlayerData.pomWoolColour];
         scarf.GetComponent<Renderer>().material.color = listOfColours[PlayerData.scarfWoolColour];
