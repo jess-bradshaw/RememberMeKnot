@@ -80,7 +80,7 @@ Guide: Bobbin is in a tangle
 Guide: Minky is a hazard to himself 
 Guide: The golden scissors..
 -> Bobbin?
-    Guide: Head right, you'll find him. 
+    Guide: Head right, you'll find them. 
 -> Minky?
     Guide: Just don't touch him
     Player: Why not? 
@@ -102,7 +102,7 @@ Guide: The golden scissors..
     Guide: It's a mystery 
     Guide: but likely something good! 
     Player: Okay, maybe I'll find them. 
-    <<Checkpoint1Cleared EventSystem>>
+<<Checkpoint1Cleared EventSystem>>
 <<jump introQuestions>>
 ===
 title: bobbin
@@ -115,10 +115,13 @@ position: 582,-227
 Player: Hi. 
 Bobbin: Could you give me a hand? 
 -> Sure. 
+    Bobbin: Thanks, I'm Bobbin by the way.
 -> Are you Bobbin?
+    Bobbin: Yeah I am. 
+    Player: I'm {$playerName}.
+    Bobbin: Nice to meet you. 
 -> No. 
-    <<jump bobbinNo>>
-Bobbin: Thanks, I'm Bobbin by the way. 
+    <<jump bobbinNo>> 
 Bobbin: I'm tangled up in something.
 Bobbin: Stitch wants to cut things off. 
 Bobbin: I'm not really sure why. 
@@ -145,7 +148,7 @@ Player: Are you Stitch?
 Stitch: Yeah? 
 -> Are you mad at Bobbin?
     <<jump StitchDetails>>
--> Cool. I'm {$playerName}. 
+//-> Cool. I'm {$playerName}. 
     Stitch: ...
 <<endif>> 
 <<if $BobbinQuest == false>>
@@ -174,6 +177,7 @@ title: BobbinStitchComplete
 position: 331,-227
 ---
 //Add in call to move Stitch here. 
+<<QuestBobbin EventSystem>>
 Bobbin: Stitch! 
 Stitch: Hey Bobbin 
 Player: ... 

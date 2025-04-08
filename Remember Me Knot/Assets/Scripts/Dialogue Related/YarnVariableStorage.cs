@@ -19,9 +19,8 @@ public class YarnVariableStorage : MonoBehaviour
     public GameObject checkpoint3;
 
 //Quests
-    public GameObject quest1;
-    public GameObject quest2;
-    public GameObject quest3;
+    public GameObject questBobbin;
+    public GameObject stitchLocation; 
 
     public InMemoryVariableStorage variableStorage;
 
@@ -113,12 +112,12 @@ public class YarnVariableStorage : MonoBehaviour
         checkpoint3.SetActive(false); 
     }
     // ------------------ Quests 
-[YarnCommand("Quest1Complete")] public void Quest1()
+[YarnCommand("QuestBobbin")] public void Quest1()
     {
-        quest1.SetActive(true);
+        questBobbin.transform.position = stitchLocation.transform.position;
     }
 [YarnCommand("Quest2Complete")] public void Quest2()
     {
-        quest2.SetActive(true);
+        
     }
 }
