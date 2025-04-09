@@ -9,5 +9,6 @@ public class SpawnerSet : MonoBehaviour
      public void OptionalFight()
     {
         PlayerData.optionalFightComplete = true; 
+        PlayerData.RedHeartCheck = true; 
     }
 }

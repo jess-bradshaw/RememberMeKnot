@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{17023822-1636-4ba3-b910-5b4fd80831b7}">
 		<property name="assetPath">
-			<value>Page Turning-013.wav</value>
+			<value>Dialogue/Page Turning-013.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

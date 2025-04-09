@@ -177,15 +177,15 @@ public class PlayerCombat : MonoBehaviour
                         DefenseEffect.gameObject.SetActive(false); 
                         break;
                     case CombatActionData.ActionType.defend:
-                        DefenseEffect.gameObject.SetActive(true); 
+                        DefenseEffect.gameObject.SetActive(true); // Jess Added this.
                         ApplyDefense(combatAction.actionValue);
-                        HealEffect.gameObject.SetActive(false);
+                        HealEffect.gameObject.SetActive(false);// Jess Added this.
                         DefenseEffect.Play();
                         break;
                     case CombatActionData.ActionType.heal:
-                        HealEffect.gameObject.SetActive(true); 
+                        HealEffect.gameObject.SetActive(true); // Jess Added this.
                         ApplyHeal(combatAction.actionValue);
-                        DefenseEffect.gameObject.SetActive(false);
+                        DefenseEffect.gameObject.SetActive(false);// Jess Added this.
                         HealEffect.Play();
                         break;
                 }

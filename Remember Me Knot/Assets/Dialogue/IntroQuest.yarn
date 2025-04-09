@@ -263,12 +263,31 @@ title: Twill
 position: 331,-227
 ---
 // ---------------------------------------------Twill Optional Quests ------------------
-Twill: Fite me!
-BonusBug: GARRRRR!
+Twill: Fight my fluffbug!
+BonusBug: GARRRRRS!
 -> Let's fight
     <<Combat1 EventSystem>>
 -> Let's talk this out. 
-// marker for talking instead. 
+    Twill: Oh.
+    <<Quest2Complete EventSystem>>
+    Player: What's wrong?
+    Twill: I just wanted to fight.
+    Player: Because?
+    Twill: Cause they are scary.
+    Player: And you want to be scary?
+    Twill: Maybe...
+    Player: ... 
+    Twill: Then I won't get hurt.
+    Player: Not everyone is going to hurt you. 
+    Twill: But many people have. 
+    Player: I'm sorry to hear that
+    Player: I won't hurt you. 
+    Twill: Really? 
+    Player: As long as you release that fluffbug. 
+    Twill: Okay... 
+    Twill: Have a white heart badge as thanks. 
+    Player: Thanks, I'll wear it with pride. 
+-> No thanks! 
 ===
 title: backStitch
 position: 331,-227

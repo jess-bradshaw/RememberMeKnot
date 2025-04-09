@@ -37,7 +37,7 @@ public class EnemyCombat : MonoBehaviour
     //Jess Added these:
      [SerializeField] private GameObject victoryUI; 
      [SerializeField] private Animator animator; 
-     [SerializeField] private GameObject DefenseEffect;
+     [SerializeField] private ParticleSystem DefenseEffect;
 
     public void Initialize()
     {
@@ -92,10 +92,12 @@ public class EnemyCombat : MonoBehaviour
                     switch (combatAction.actionType)
                     {
                         case CombatActionData.ActionType.attack:
+                            //animator.SetTrigger("Attack"); // Jess Added this.
                             playerCombat.ApplyDamage(combatAction.actionValue);
                             break;
                         case CombatActionData.ActionType.defend: 
-                            DefenseEffect.SetActive(true);
+                            DefenseEffect.gameObject.SetActive(true);// Jess Added this.
+                            DefenseEffect.Play();
                             ApplyDefense(combatAction.actionValue);
                             break;
                         case CombatActionData.ActionType.heal:
@@ -107,7 +109,6 @@ public class EnemyCombat : MonoBehaviour
                     actionQueue.RemoveAt(0);
                 }
                 timeOnResolvingAction = 0f;
-                //DefenseEffect.SetActive(false);
             }
         }
     }

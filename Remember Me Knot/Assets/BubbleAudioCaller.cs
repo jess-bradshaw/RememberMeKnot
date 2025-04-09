@@ -21,12 +21,12 @@ namespace Yarn.Unity.Addons.SpeechBubbles
 
         public void PlayContinueAudio()
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.ContinueButton, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Dialogue, this.transform.position);
         }
 
         public void PlayChangeAudio()
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.ContinueButton, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Dialogue, this.transform.position);
         }
     }
 }

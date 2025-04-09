@@ -1125,8 +1125,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282598468
+  m_fontColor: {r: 0.26666668, g: 0.26666668, b: 0.2627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1678,6 +1678,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261794410}
   m_CullTransparentMesh: 1
+--- !u!1 &292089430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292089431}
+  - component: {fileID: 292089433}
+  - component: {fileID: 292089432}
+  m_Layer: 5
+  m_Name: RedHeart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &292089431
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292089430}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.1655083, y: 3.1655083, z: 3.1655083}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 730251714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -45.000004, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &292089432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292089430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.76862746, g: 0.22745098, b: 0.26666668, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6099802f784756748995db99edcedb11, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &292089433
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292089430}
+  m_CullTransparentMesh: 1
 --- !u!1 &298325430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,7 +2133,7 @@ GameObject:
   - component: {fileID: 423585723}
   - component: {fileID: 423585722}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: WhiteHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2096,14 +2171,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7969547, g: 0.33610713, b: 0.8584906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 884793c999027344ea64db0ff038f967, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 650855962bc4511408230240ca7bc900, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3407,6 +3482,7 @@ RectTransform:
   - {fileID: 724541536}
   - {fileID: 1291655287}
   - {fileID: 1824721780}
+  - {fileID: 292089431}
   - {fileID: 1083758416}
   m_Father: {fileID: 1173340794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3873,8 +3949,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282598468
+  m_fontColor: {r: 0.26666668, g: 0.26666668, b: 0.2627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4036,6 +4112,8 @@ MonoBehaviour:
   UIPom: {fileID: 298325430}
   UIScarf: {fileID: 523419864}
   UICoat: {fileID: 1930667598}
+  RedHeart: {fileID: 0}
+  WhiteHeart: {fileID: 0}
   listOfColours:
   - {r: 0.96862745, g: 0.96862745, b: 0.9490196, a: 1}
   - {r: 0.16862746, g: 0.1882353, b: 0.4862745, a: 1}
@@ -4396,6 +4474,8 @@ MonoBehaviour:
   UIPom: {fileID: 56000243}
   UIScarf: {fileID: 1865093258}
   UICoat: {fileID: 261794410}
+  RedHeart: {fileID: 1233586102}
+  WhiteHeart: {fileID: 423585720}
   listOfColours:
   - {r: 0.96862745, g: 0.96862745, b: 0.9490196, a: 1}
   - {r: 0.16862746, g: 0.1882353, b: 0.4862745, a: 1}
@@ -5443,6 +5523,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207195118}
   m_CullTransparentMesh: 1
+--- !u!1 &1233586102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233586103}
+  - component: {fileID: 1233586105}
+  - component: {fileID: 1233586104}
+  m_Layer: 5
+  m_Name: redHeart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1233586103
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233586102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1355883419}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -67.39996, y: 0.00000023841858}
+  m_SizeDelta: {x: 354, y: 335}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1233586104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233586102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.76862746, g: 0.22745098, b: 0.26666668, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 650855962bc4511408230240ca7bc900, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1233586105
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233586102}
+  m_CullTransparentMesh: 1
 --- !u!1 &1291655286
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,6 +6430,7 @@ RectTransform:
   - {fileID: 1865093259}
   - {fileID: 261794411}
   - {fileID: 423585721}
+  - {fileID: 1233586103}
   - {fileID: 56000244}
   m_Father: {fileID: 1173340794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6474,6 +6630,8 @@ MonoBehaviour:
   UIPom: {fileID: 1083758415}
   UIScarf: {fileID: 724541535}
   UICoat: {fileID: 1291655286}
+  RedHeart: {fileID: 292089430}
+  WhiteHeart: {fileID: 1824721779}
   listOfColours:
   - {r: 0.96862745, g: 0.96862745, b: 0.9490196, a: 1}
   - {r: 0.16862746, g: 0.1882353, b: 0.4862745, a: 1}
@@ -6994,7 +7152,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.26666668, g: 0.26666668, b: 0.2627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7468,7 +7626,7 @@ GameObject:
   - component: {fileID: 1824721782}
   - component: {fileID: 1824721781}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: WhiteHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7490,7 +7648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.6, y: 0}
+  m_AnchoredPosition: {x: -45, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1824721781
@@ -7506,7 +7664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7969547, g: 0.33610713, b: 0.8584906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

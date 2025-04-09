@@ -12,4 +12,6 @@ public class PlayerData : MonoBehaviour
     public static bool mandatoryFightComplete; 
     public static bool optionalFightComplete; 
     public static bool CombatDemoCheck; 
+    public static bool RedHeartCheck;
+    public static bool WhiteHeartCheck; 
 }

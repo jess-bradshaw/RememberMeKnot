@@ -118,6 +118,6 @@ public class YarnVariableStorage : MonoBehaviour
     }
 [YarnCommand("Quest2Complete")] public void Quest2()
     {
-        
+        PlayerData.WhiteHeartCheck = true;
     }
 }
