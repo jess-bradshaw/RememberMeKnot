@@ -10,6 +10,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles
         void Start()
         {
             dialogueView.onTriggerContinue += PlayContinueAudio;
+            dialogueView.onTriggerChange += PlayChangeAudio;
         }
 
         // Update is called once per frame
@@ -19,6 +20,11 @@ namespace Yarn.Unity.Addons.SpeechBubbles
         }
 
         public void PlayContinueAudio()
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ContinueButton, this.transform.position);
+        }
+
+        public void PlayChangeAudio()
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.ContinueButton, this.transform.position);
         }

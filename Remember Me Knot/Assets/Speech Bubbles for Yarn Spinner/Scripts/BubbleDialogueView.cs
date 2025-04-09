@@ -144,6 +144,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles
 
         public delegate void OnTriggerSound();
         public event OnTriggerSound onTriggerContinue;
+        public event OnTriggerSound onTriggerChange;
 
         /// <summary>
         /// The current bubble being used to present a line/option
@@ -441,6 +442,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles
             {
                 return;
             }
+            onTriggerChange?.Invoke();
 
             StartCoroutine(PresentContentInBubble(this.currentBubble, this.currentContent));
         }
