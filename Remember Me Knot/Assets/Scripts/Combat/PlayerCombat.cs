@@ -69,8 +69,8 @@ public class PlayerCombat : MonoBehaviour
     private PlayerCombatConnectionData lastResolvedConnection = null;
      //Jess Added these:
      [SerializeField] private Animator animator; 
-     [SerializeField] private GameObject HealEffect;
-     [SerializeField] private GameObject DefenseEffect;
+     [SerializeField] private ParticleSystem HealEffect;
+     [SerializeField] private ParticleSystem DefenseEffect;
 
     public void Initialize()
     {
@@ -173,18 +173,20 @@ public class PlayerCombat : MonoBehaviour
                     case CombatActionData.ActionType.attack:
                         animator.SetTrigger("Attack"); // Jess Added this.
                         enemyCombat.ApplyDamage(combatAction.actionValue); 
-                        HealEffect.SetActive(false); 
-                        DefenseEffect.SetActive(false); 
+                        HealEffect.gameObject.SetActive(false); 
+                        DefenseEffect.gameObject.SetActive(false); 
                         break;
                     case CombatActionData.ActionType.defend:
-                        DefenseEffect.SetActive(true); 
+                        DefenseEffect.gameObject.SetActive(true); 
                         ApplyDefense(combatAction.actionValue);
-                        HealEffect.SetActive(false); 
+                        HealEffect.gameObject.SetActive(false);
+                        DefenseEffect.Play();
                         break;
                     case CombatActionData.ActionType.heal:
-                        HealEffect.SetActive(true); 
+                        HealEffect.gameObject.SetActive(true); 
                         ApplyHeal(combatAction.actionValue);
-                        DefenseEffect.SetActive(false); 
+                        DefenseEffect.gameObject.SetActive(false);
+                        HealEffect.Play();
                         break;
                 }
                      
