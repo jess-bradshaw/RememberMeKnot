@@ -142,6 +142,9 @@ namespace Yarn.Unity.Addons.SpeechBubbles
         [Tooltip("When this view starts, pre-create a Bubble for every Character Anchor in the scene.")]
         [SerializeField] private bool preCreateBubblesOnStart = false;
 
+        public delegate void OnTriggerSound();
+        public event OnTriggerSound onTriggerContinue;
+
         /// <summary>
         /// The current bubble being used to present a line/option
         /// </summary>
@@ -317,6 +320,8 @@ namespace Yarn.Unity.Addons.SpeechBubbles
                 }
                 return;
             }
+
+            onTriggerContinue?.Invoke();
 
             // otherwise we in the process of showing a line and want it interrupted
             requestInterrupt?.Invoke();
