@@ -12946,8 +12946,8 @@ MonoBehaviour:
   availableActionIndicators: []
   actionResolveDuration: 2.5
   animator: {fileID: 1545947109}
-  HealEffect: {fileID: 967164817}
-  DefenseEffect: {fileID: 1973392468}
+  HealEffect: {fileID: 967164820}
+  DefenseEffect: {fileID: 1973392470}
 --- !u!1 &1280797630
 GameObject:
   m_ObjectHideFlags: 0
