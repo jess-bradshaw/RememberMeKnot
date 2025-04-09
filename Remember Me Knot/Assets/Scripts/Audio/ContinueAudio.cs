@@ -14,4 +14,7 @@ public class ContinueAudio : MonoBehaviour
     public void PlayLeftSound(){
         AudioManager.instance.PlayOneShot(FMODEvents.instance.LeftButton, this.transform.position); 
     }
+    public void PlayDialogueSound(){
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.Dialogue, this.transform.position); 
+    }
 }

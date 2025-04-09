@@ -37,7 +37,7 @@ public class DialogueStarter : MonoBehaviour
         { 
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("F was pressed "+ gameObject.name + " with conversationStartNode " + conversationStartNode); 
+                //Debug.Log("F was pressed "+ gameObject.name + " with conversationStartNode " + conversationStartNode); 
                 dialogueRunner.StartDialogue(conversationStartNode);
                 readyToInteract = false;
             }

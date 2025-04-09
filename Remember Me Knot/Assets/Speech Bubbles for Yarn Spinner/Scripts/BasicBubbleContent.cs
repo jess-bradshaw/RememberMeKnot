@@ -234,7 +234,7 @@ namespace Yarn.Unity.Addons.SpeechBubbles
             {
                 return;
             }
-            FindAnyObjectByType<BubbleDialogueView>().ChangeOption(increment);
+            FindAnyObjectByType<BubbleDialogueView>().ChangeOption(increment); 
         }
 
         /// <summary>

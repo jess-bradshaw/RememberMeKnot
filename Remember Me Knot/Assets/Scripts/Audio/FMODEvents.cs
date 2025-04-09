@@ -9,6 +9,7 @@ public class FMODEvents : MonoBehaviour
    [field: SerializeField] public EventReference RightButton {get; private set;} 
    [field: SerializeField] public EventReference LeftButton {get; private set;} 
    [field: SerializeField] public EventReference BackButton {get; private set;} 
+    [field: SerializeField] public EventReference Dialogue {get; private set;} 
 [field: Header("Player SFX")]
    [field: SerializeField] public EventReference FootSteps {get; private set;} 
 //background noises  
