@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Jess created. 
 public class PlayerData : MonoBehaviour
 {
     public static string playerName; 

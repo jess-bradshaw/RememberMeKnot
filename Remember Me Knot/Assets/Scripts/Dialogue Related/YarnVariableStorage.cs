@@ -1,6 +1,6 @@
 using UnityEngine;
 using Yarn.Unity; 
-
+//Jess created 
 public class YarnVariableStorage : MonoBehaviour
 {
     public string playerName; 
@@ -21,6 +21,7 @@ public class YarnVariableStorage : MonoBehaviour
 //Quests
     public GameObject questBobbin;
     public GameObject stitchLocation; 
+    public GameObject stitchTrigger; 
 
     public InMemoryVariableStorage variableStorage;
 
@@ -115,6 +116,7 @@ public class YarnVariableStorage : MonoBehaviour
 [YarnCommand("QuestBobbin")] public void Quest1()
     {
         questBobbin.transform.position = stitchLocation.transform.position;
+        stitchTrigger.SetActive(false); 
     }
 [YarnCommand("Quest2Complete")] public void Quest2()
     {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI; 
+//Jess created this script 
 
 public class GetColourValue : MonoBehaviour
 {

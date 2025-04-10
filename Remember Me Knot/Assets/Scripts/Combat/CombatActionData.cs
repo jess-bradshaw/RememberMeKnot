@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-
+//Code by Keely Brown
 [Serializable]
 public class CombatActionData
 {

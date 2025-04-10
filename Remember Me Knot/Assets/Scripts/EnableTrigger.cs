@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Jess created, good old OnTriggerEnter! 
 public class EnableTrigger : MonoBehaviour
 {
     [Header("item to enable/disable")]

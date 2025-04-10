@@ -171,6 +171,7 @@ public class PlayerCombat : MonoBehaviour
                 switch (combatAction.actionType)
                 {
                     case CombatActionData.ActionType.attack:
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.PlayerAttack, this.transform.position);
                         animator.SetTrigger("Attack"); // Jess Added this.
                         enemyCombat.ApplyDamage(combatAction.actionValue); 
                         HealEffect.gameObject.SetActive(false); 
@@ -181,11 +182,13 @@ public class PlayerCombat : MonoBehaviour
                         ApplyDefense(combatAction.actionValue);
                         HealEffect.gameObject.SetActive(false);// Jess Added this.
                         DefenseEffect.Play();
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.PlayerDefend, this.transform.position);  
                         break;
                     case CombatActionData.ActionType.heal:
                         HealEffect.gameObject.SetActive(true); // Jess Added this.
                         ApplyHeal(combatAction.actionValue);
                         DefenseEffect.gameObject.SetActive(false);// Jess Added this.
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.PlayerHeal, this.transform.position); 
                         HealEffect.Play();
                         break;
                 }

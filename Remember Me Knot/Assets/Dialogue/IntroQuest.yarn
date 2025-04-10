@@ -13,8 +13,8 @@ position: 25,-239
 <<set $askedName to false>>
 //Start of dialogue 
 // ---------------------------------------------Terry Quests ------------------
-Guide: Welcome adventurer!
 Player: Hello! 
+Guide: Welcome adventurer!
 <<jump introQuestions>>
 === 
 title: introQuestions
@@ -28,11 +28,21 @@ position: 25,-40
 -> Who are you? 
     <<jump whoAreYou>>
 <<endif>>
-<<if $askedWhere>>
+<<if $askedWhere && $Glitter == false>>
 -> Glittersphere?
     <<jump GlittersphereIntro>>
 -> Who are you?
     <<jump whoAreYou>>
+-> What should I do?
+    <<jump WhatShouldIDoIntro>>
+<<endif>>
+<<if $Glitter && $askedName == false>>
+-> Who are you?
+    <<jump whoAreYou>>
+-> What should I do?
+    <<jump WhatShouldIDoIntro>>
+<<endif>>
+<<if $Glitter && $askedName>>
 -> What should I do?
     <<jump WhatShouldIDoIntro>>
 -> Bye
@@ -46,7 +56,7 @@ position: -271,268
 <<endif>> 
 <<GuideNameSet EventSystem>>
 <<set $askedName to true>>
-Guide: Oh sorry, my name is Terry. 
+Guide: Oh sorry, my name is Terry.
 Guide: What's yours?
 Player: I'm {$playerName}.
 Guide: Nice to meet you {$playerName}.
@@ -55,53 +65,53 @@ Guide: Nice to meet you {$playerName}.
 title: AlreadyAskedName
 position: -272,455
 ---
-Guide: I'm Terry, and you're {$playerName}. 
-Player: I just wanted to double check. 
+Guide: I'm Terry & you're {$playerName}.
+Player: I just wanted to double check.
  <<jump introQuestions>>
 ===
 title: GlittersphereIntro
 position: -18,272
 ---
-Guide: It's what we named this place. 
+<<set $Glitter to true>>
+Guide: It's what we named this place.
 -> How long ago was that?
-    Guide: Hmm... I'm not sure. 
-    Guide: Time gets a bit fuzzy. 
+    Guide: Hmm... I'm not sure.
+    Guide: Time gets a bit fuzzy.
     <<jump introQuestions>>
 -> We?
-    Guide: There's lots of us around 
-    Guide: and more arriving every day. 
+    Guide: There's lots of us around.
+    Guide: More arriving every day.
     <<jump introQuestions>>
 ===
 title: WhatShouldIDoIntro
-position: 227,267
+position: 430,301
 ---
-Guide: Lots of folks need help
-Guide: Bobbin is in a tangle
-Guide: Minky is a hazard to himself 
+Guide: Lots of folks need help.
+Guide: Bobbin is in a tangle.
+Guide: Minky is a hazard to himself.
 Guide: The golden scissors..
 -> Bobbin?
     Guide: Head right, you'll find them. 
 -> Minky?
-    Guide: Just don't touch him
+    Guide: Just don't touch him.
     Player: Why not? 
-    Guide: It's safer that way
+    Guide: It's safer that way.
     Player: Hmm okay? 
 -> Golden Scissors? 
     Guide: Yeah...
     Player: Go on... 
-    Guide: They sort of went missing 
+    Guide: They sort of went missing.
     Player: Missing?
-    Guide: We have looked everywhere
+    Guide: We have looked everywhere.
     -> Maybe I can help?
-        Guide: You are welcome to look for them
-    -> You said they were golden? 
-        Guide: Keep an eye out for them 
-    -> Good luck 
-    Guide: There is a rewards for them 
+        Guide: You are welcome to look for them.
+    -> They were golden? 
+        Guide: Gold. Big. Can't miss them.  
+    Guide: There is a rewards for them.
     Player: What kind of reward? 
-    Guide: It's a mystery 
-    Guide: but likely something good! 
-    Player: Okay, maybe I'll find them. 
+    Guide: It's a mystery.
+    Guide: Likely something good though! 
+    Player: Okay, thanks! 
 <<Checkpoint1Cleared EventSystem>>
 <<jump introQuestions>>
 ===
@@ -109,90 +119,127 @@ title: bobbin
 position: 582,-227
 ---
 // ---------------------------------------------Bobbin Quests ------------------
-<<if $StitchChat>>
+<<if $BobbinQuest && $StitchChat>>
 <<jump BobbinStitchComplete>>
 <<endif>>
-Player: Hi. 
-Bobbin: Could you give me a hand? 
--> Sure. 
-    Bobbin: Thanks, I'm Bobbin by the way.
--> Are you Bobbin?
-    Bobbin: Yeah I am. 
-    Player: I'm {$playerName}.
-    Bobbin: Nice to meet you. 
--> No. 
-    <<jump bobbinNo>> 
-Bobbin: I'm tangled up in something.
-Bobbin: Stitch wants to cut things off. 
-Bobbin: I'm not really sure why. 
-Bobbin: Could you ask her for me? 
-Player: Seems easy enough. 
-Bobbin: Thanks!
+<<if $BobbinQuest && $StitchChat == false>>
+<<jump BobbinUpdate>>
+<<endif>>
 Bobbin: I'm fretting over split ends!
+Player: Hello?
+Bobbin: H-hi!
+-> Are you Bobbin?
+    Bobbin: Yes! Who told you?
+    Bobbin: Was it Stitch?
+    Player: No, who is Stitch?
+-> Are you Minky? 
+    Bobbin: No, I'm Bobbin. 
+    Bobbin: But I need your help. 
+    Player: What do you need help with? 
+Bobbin: Stitch wants to cut things off. 
+Player: ... 
+Bobbin: Stitch is my partner.
+Bobbin: We tied the knot a while ago. 
+Bobbin: But it's all a tangle now. 
+Player: Did something happen? 
+Bobbin: I'm not sure. 
+Bobbin: C-could you ask her for me? 
+-> Sure, seems easy. 
+-> Is there a reward? 
+    Bobbin: Oh... there can be?
+    Bobbin: I'll think of something. 
+Bobbin: Thanks!
+Bobbin: Oh, what was your name?
+Player: I'm {$playerName}.
+Bobbin: Thanks again, {$playerName}. 
 <<set $BobbinQuest to true>>
 ===
-title: bobbinNo
-position: 582,-227
+title: BobbinUpdate
 ---
-Bobbin: Oh darn.
-Bobbin: If you change your mind let me know. 
-Bobbin: I'm unraveling over this. 
+Bobbin: H-Have you talked to her? 
+Player: Not yet. 
+Bobbin: Okay. Let me know when you do. 
 ===
 title: stitch
 position: 331,-227
 ---
-Player: Hi. 
-Stitch: ...
-<<if $BobbinQuest>>
-Player: Are you Stitch?
-Stitch: Yeah? 
--> Are you mad at Bobbin?
+<<if $Mended>>
+    <<jump DistractedBobbin>>
+<<elseif $StitchChat>>
+    Stitch: I'll catch up. 
+    Player: Okay, I'll head to Bobbin.
+<<elseif $BobbinQuest && $StitchChat == false>>
+    Player: Hello!
+    Stitch: ...
+    Player: Are you Stitch?
+    Stitch: Yeah? 
+    Player: Are you mad at Bobbin?
     <<jump StitchDetails>>
-//-> Cool. I'm {$playerName}. 
-    Stitch: ...
-<<endif>> 
-<<if $BobbinQuest == false>>
-Player: Hi
-Stitch: What?
--> Are you okay? 
-    Stitch: Leave me alone. 
-    Player: Umm okay. Bye.
--> I'm {$playerName}. 
-    Stitch: ...
-    Player: And you are?
-    Stitch: ...
-<<endif>> 
+<<elseif $BobbinQuest == false>>
+    Player: Hello!
+    Stitch: What?
+    -> Are you okay? 
+        Stitch: Leave me alone. 
+        Player: Bye? 
+        Stitch: ...
+    -> I'm {$playerName}. 
+        Stitch: ...
+        Player: And you are?
+        Stitch: ...
+<<endif>>
 ===
 title: StitchDetails
 position: 331,-227
 ---
 Stitch: I'm not mad. 
-Player: No? 
-Stitch: Bobbin wants to break up.
-Player: Bobbin is worried about you. 
-Player: You two should talk. 
+Player: You aren't?
+Stitch: I'm sad.
+-> Sad?
+    Stitch: Yeah about Bobbin. 
+-> Bobbin might be sad too. 
+    Stitch: They are?
+Player: Bobbin seemed worried. 
+Stitch: Worried about what? 
+Player: I think you two should talk. 
+Stitch: ...
+Stitch: You're right. 
+Stitch: You go ahead, I'll catch up. 
+Player: Okay. I'll see you over there. 
 <<set $StitchChat to true>>
 ===
 title: BobbinStitchComplete
 position: 331,-227
 ---
-//Add in call to move Stitch here. 
-<<QuestBobbin EventSystem>>
+<<if $Mended>>
+<<jump DistractedBobbin>>
+<<endif>>
+Bobbin: H-have you talked to her?
+<<QuestBobbin EventSystem>> //Move stitch to closer location. 
 Bobbin: Stitch! 
-Stitch: Hey Bobbin 
-Player: ... 
+Stitch: Hey Bobbin.
+Player: ...
 Stitch: I-
 Bobbin: Before you do it 
 Bobbin: I'm sorry
 Stitch: Sorry? 
 Bobbin: Yeah.
-Stitch: I'm sorry too. 
-Stitch: {$playerName} helped
-Bobbin: Yeah {$pronoun1} helped me too. 
+Stitch: I'm sorry too.
+Player: ...
+Bobbin: Sorry, {$playerName}.
+Player: It's all good. 
+Player: You have stuff to talk through.
+Stitch: I'm glad {$pronoun1} said something.
+Bobbin: Me too. 
 <<Checkpoint2Cleared EventSystem>>
-//<<Quest2Complete EventSystem>>
+<<set $Mended to true>>
 ===
-
+title: DistractedBobbin
+---
+Bobbin: Really?
+Stitch: Mmhm. 
+Bobbin: Go on!!
+Stitch: Well...
+===
 title: cali
 position: 331,-227
 ---
@@ -202,19 +249,27 @@ FluffBug: GARRRRR!
 Cali: Rip it apart! 
 -> I'll protect you!
     <<CombatDemo EventSystem>>
--> Maybe later
+-> Maybe later.
 ===
 title: cali2
+position: 519,167
 ---
 Cali2: Thanks for saving me! 
-Player: Of course
+Player: Of course.
+-> Golden scissors?
+    Cali2: I haven't seen them in a while.
+    Player: So not around here?
+    Cali2: Nah, maybe keep heading right. 
+    Player: Thank you! 
+    Cali2: Good luck adventurer! 
+-> Bye! 
 ===
 title: Minky
 position: 331,-227
 ---
 // ---------------------------------------------Minky ------------------
-Player: Hi 
-Minky: Hey, finger guns 
+Player: Hello! 
+Minky: Hey, finger guns.
 <<if $BobbinQuest>>
 -> Are you Stitch?
     Minky: Nah name's Minky. 
@@ -243,6 +298,7 @@ Player: Can I help?
 Minky: No thanks. 
 ===
 title: MinkyOkay
+position: 389,43
 ---
 Minky: Yeah, little pinned.
 -> Why are you pinned?
@@ -263,9 +319,12 @@ title: Twill
 position: 331,-227
 ---
 // ---------------------------------------------Twill Optional Quests ------------------
+<<if $WhiteBadge>>
+<<jump TwillSolved>>
+<<endif>>
 Twill: Fight my fluffbug!
 BonusBug: GARRRRRS!
--> Let's fight
+-> Let's fight!
     <<Combat1 EventSystem>>
 -> Let's talk this out. 
     Twill: Oh.
@@ -273,34 +332,61 @@ BonusBug: GARRRRRS!
     Player: What's wrong?
     Twill: I just wanted to fight.
     Player: Because?
-    Twill: Cause they are scary.
-    Player: And you want to be scary?
-    Twill: Maybe...
+    Twill: Cause I'm scary!
+    Player: Are you?
+    Twill: Yes.
     Player: ... 
-    Twill: Then I won't get hurt.
+    Twill: Maybe.
+    Player: ...
+    Twill: I have to be so I don't get hurt.
     Player: Not everyone is going to hurt you. 
     Twill: But many people have. 
-    Player: I'm sorry to hear that
+    Player: I'm sorry to hear that.
     Player: I won't hurt you. 
     Twill: Really? 
-    Player: As long as you release that fluffbug. 
+    Player: Just get rid of that fluffbug.
     Twill: Okay... 
-    Twill: Have a white heart badge as thanks. 
-    Player: Thanks, I'll wear it with pride. 
+    Player: It's a deal then.
+    Twill: Sure. 
+    Twill: Take this white heart badge.
+    Player: For what?
+    Twill: My way of saying thanks.
+    Player: I'll wear it with pride. 
+    <<set $WhiteBadge to true>>
 -> No thanks! 
+===
+title: TwillSolved
+---
+Twill: Thanks for being nice. 
+Player: Of course, take care! 
+===
+title: Twill2
+---
+Twill2: ...
+Player: Not so scary now.
+Twill2: Enjoy that bloody heart badge.
+Player: Thanks, I will. 
+Twill2: ... 
 ===
 title: backStitch
 position: 331,-227
 ---
 // ---------------------------------------------Demo Complete------------------
-Player: Hi. 
-BackStitch: Hey
--> I'm done. 
+Player: Hello!
+BackStitch: Hey.
+BackStitch: This is the end of the demo.
+-> I'm done with the demo. 
     <<EndDemo EventSystem>>
--> Nevermind. 
+-> What about the golden scissors? 
+    BackStitch: The adventure continues...
+    BackStitch: in the full version of the game! 
+    -> I'm done with the demo. 
+        <<EndDemo EventSystem>>
+    -> I want to go back. 
+-> I want to go back.
 ===
 title: fluffBug
-position: 331,-227
+position: 389,-29
 ---
 Player: Hi. 
 FluffBug: GARRRRR!

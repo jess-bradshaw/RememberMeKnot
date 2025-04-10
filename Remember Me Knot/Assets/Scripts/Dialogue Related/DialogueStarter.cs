@@ -1,6 +1,6 @@
 using UnityEngine;
 using Yarn.Unity; 
-
+//Jess created, Keely troubleshooted. 
 public class DialogueStarter : MonoBehaviour
 {
     [SerializeField] private string conversationStartNode; 

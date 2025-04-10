@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{88bdf569-18fc-4221-816e-740952c02d95}">
+	<object class="AudioFile" id="{f3af8f30-ac0f-49b4-8ac9-412b95677472}">
 		<property name="assetPath">
-			<value>Step1.mp3</value>
+			<value>Combat/394412__inspectorj__bamboo-swing-a12.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.47999999999999998</value>
+			<value>0.82031746031746033</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{02d0d437-88f4-4e28-be38-fa70c54355a6}</destination>

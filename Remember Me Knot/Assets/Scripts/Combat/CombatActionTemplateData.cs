@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-
+//Code by Keely Brown
 [Serializable]
 public class CombatActionTemplateData
 {

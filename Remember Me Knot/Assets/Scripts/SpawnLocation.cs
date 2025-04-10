@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// Jess made this script from Scratch
 public class SpawnLocation : MonoBehaviour
 {
     public GameObject player; 
@@ -30,6 +30,9 @@ public class SpawnLocation : MonoBehaviour
             optionalFluffBug.SetActive(false); 
             Twill.SetActive(false); 
             Twill2.SetActive(true); 
+            mandatoryFluffBug.SetActive(false); 
+            Cali.SetActive(false); 
+            Cali2.SetActive(true); 
         }
     }
 }

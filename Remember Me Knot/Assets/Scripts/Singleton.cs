@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Jess doesn't remember where this came from but it was from one of the resources - I dont believe its being used and likely lingering old content. 
 
 /// <summary>
 /// Used to force there only being one of a class via inheritance and allows it to be called anywhere.

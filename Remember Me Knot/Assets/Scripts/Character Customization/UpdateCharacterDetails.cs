@@ -1,6 +1,6 @@
 using UnityEngine;
 using Yarn.Unity; 
-
+//Jess created but not used. 
 public class UpdateCharacterDetails : MonoBehaviour
 {
    // public DialogueRunner dialogueRunner; 

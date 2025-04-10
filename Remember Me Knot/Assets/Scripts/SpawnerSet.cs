@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Jess made this from stratch 
 public class SpawnerSet : MonoBehaviour
 {
     public void MandatoryFight()

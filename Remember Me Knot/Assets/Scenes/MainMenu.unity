@@ -4610,6 +4610,13 @@ MonoBehaviour:
       Data3: -2073803383
       Data4: 848397933
     Path: event:/SFX/Dialogue
+  <Victory>k__BackingField:
+    Guid:
+      Data1: -1841546206
+      Data2: 1248312603
+      Data3: -363163737
+      Data4: -446515561
+    Path: event:/SFX/Victory
   <FootSteps>k__BackingField:
     Guid:
       Data1: -1470053743
@@ -4617,6 +4624,48 @@ MonoBehaviour:
       Data3: 1445866418
       Data4: -1779648123
     Path: event:/SFX/FootSteps
+  <PlayerHeal>k__BackingField:
+    Guid:
+      Data1: -749512762
+      Data2: 1217201202
+      Data3: -1942150495
+      Data4: 1843082708
+    Path: event:/SFX/PlayerHeal
+  <PlayerDefend>k__BackingField:
+    Guid:
+      Data1: 1456043241
+      Data2: 1086749916
+      Data3: -13193299
+      Data4: 2070999353
+    Path: event:/SFX/PlayerDefend
+  <PlayerAttack>k__BackingField:
+    Guid:
+      Data1: 2068071164
+      Data2: 1169971880
+      Data3: -657165918
+      Data4: -1616271911
+    Path: event:/SFX/PlayerAttack
+  <EnemyHeal>k__BackingField:
+    Guid:
+      Data1: -107822034
+      Data2: 1270046519
+      Data3: 1525948314
+      Data4: 2104116238
+    Path: event:/SFX/EnemyHeal
+  <EnemyDefend>k__BackingField:
+    Guid:
+      Data1: -540395669
+      Data2: 1264672945
+      Data3: 47006655
+      Data4: 2000867409
+    Path: event:/SFX/EnemyDefend
+  <EnemyAttack>k__BackingField:
+    Guid:
+      Data1: 876007312
+      Data2: 1239656596
+      Data3: -1132003448
+      Data4: -155829499
+    Path: event:/SFX/EnemyAttack
   <BackgroundMusic>k__BackingField:
     Guid:
       Data1: 2007659719

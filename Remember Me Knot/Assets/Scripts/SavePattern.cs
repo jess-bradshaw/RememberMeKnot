@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Jess created with the help of Keely. 
 public class SavePattern : MonoBehaviour
 {
     public void SavePatternFile()

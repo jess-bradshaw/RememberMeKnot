@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
-
+//Code by Keely Brown
 
 class PlayerCombatConnectionData
 {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI; 
 using TMPro; 
-
+//Jess Created. 
 public class GetValueName : MonoBehaviour
 {
     [SerializeField] TMP_Text nameInput; 

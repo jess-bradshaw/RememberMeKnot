@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI; 
 using TMPro; 
-
+//Jess created this. Keely helped troubleshoot tMP issues. 
 public class GiveValue : MonoBehaviour
 {
    [SerializeField] TMP_Text pronounText; 

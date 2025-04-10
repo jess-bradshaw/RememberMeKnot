@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
+//Jess created. Keely helped with direction but Jess coded it. 
 public class SetPatternColours : MonoBehaviour
 {
     public GameObject UIBody;

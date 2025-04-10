@@ -92,13 +92,15 @@ public class EnemyCombat : MonoBehaviour
                     switch (combatAction.actionType)
                     {
                         case CombatActionData.ActionType.attack:
-                            //animator.SetTrigger("Attack"); // Jess Added this.
+                            AudioManager.instance.PlayOneShot(FMODEvents.instance.EnemyAttack, this.transform.position);
+                            animator.SetTrigger("Attack"); // Jess Added this.
                             playerCombat.ApplyDamage(combatAction.actionValue);
                             break;
                         case CombatActionData.ActionType.defend: 
                             DefenseEffect.gameObject.SetActive(true);// Jess Added this.
                             DefenseEffect.Play();
                             ApplyDefense(combatAction.actionValue);
+                            AudioManager.instance.PlayOneShot(FMODEvents.instance.EnemyDefend, this.transform.position); 
                             break;
                         case CombatActionData.ActionType.heal:
                             ApplyHeal(combatAction.actionValue);
@@ -125,16 +127,18 @@ public class EnemyCombat : MonoBehaviour
        
         if (currentDefense > 0)
         {
+            //animator.SetTrigger("Hit"); // Jess Added this. 
             int temp = currentDefense;
             currentDefense -= damage;
             damage -= temp;
-        
+            
             if (damage < 0)
             {
                 UpdateStats();
                 if(currentHealth <=0)
                 {
                     CombatController.Instance.TriggerEnemyDefeat();
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.Victory, this.transform.position);
                     victoryUI.SetActive(true);
                 }
                 return;
@@ -147,6 +151,7 @@ public class EnemyCombat : MonoBehaviour
         {
             CombatController.Instance.TriggerEnemyDefeat();
             victoryUI.SetActive(true);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Victory, this.transform.position);
         }
     }
 
@@ -175,4 +180,5 @@ public class EnemyCombat : MonoBehaviour
     {
         _currentState = State.inactive;
     }
+
 }

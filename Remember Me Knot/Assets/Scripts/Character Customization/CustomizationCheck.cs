@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI; 
 using TMPro; 
-
+//Jess created this script 
 public class CustomizationCheck : MonoBehaviour
 {
     [SerializeField] private GameObject pWarning;  
