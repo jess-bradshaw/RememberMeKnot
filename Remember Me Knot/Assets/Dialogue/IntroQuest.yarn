@@ -35,12 +35,14 @@ position: 25,-40
     <<jump whoAreYou>>
 -> What should I do?
     <<jump WhatShouldIDoIntro>>
+-> Bye
 <<endif>>
 <<if $Glitter && $askedName == false>>
 -> Who are you?
     <<jump whoAreYou>>
 -> What should I do?
     <<jump WhatShouldIDoIntro>>
+-> Bye
 <<endif>>
 <<if $Glitter && $askedName>>
 -> What should I do?
@@ -107,7 +109,7 @@ Guide: The golden scissors..
         Guide: You are welcome to look for them.
     -> They were golden? 
         Guide: Gold. Big. Can't miss them.  
-    Guide: There is a rewards for them.
+    Guide: There is a reward for them.
     Player: What kind of reward? 
     Guide: It's a mystery.
     Guide: Likely something good though! 

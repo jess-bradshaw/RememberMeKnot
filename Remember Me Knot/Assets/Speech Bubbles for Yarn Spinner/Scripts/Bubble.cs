@@ -200,7 +200,8 @@ namespace Yarn.Unity.Addons.SpeechBubbles
                 if (value < minInclusive)
                 {
                     isWrapped = true;
-                    return maxExclusive - 1 - (minInclusive - value);
+                    return maxExclusive - 1; 
+                   // return maxExclusive - 1 - (minInclusive - value);
                 }
                 else if (value >= maxExclusive)
                 {

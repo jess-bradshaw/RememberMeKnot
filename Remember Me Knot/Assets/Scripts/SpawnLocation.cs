@@ -12,6 +12,8 @@ public class SpawnLocation : MonoBehaviour
      public GameObject Twill; 
     public GameObject Twill2;
     public GameObject barrier; 
+    public GameObject stitchLocation; 
+    public GameObject stitch; 
      [SerializeField] private Animator caliAnimator;
     void Start()
     {
@@ -22,7 +24,7 @@ public class SpawnLocation : MonoBehaviour
             Cali.SetActive(false); 
             Cali2.SetActive(true); 
             barrier.SetActive(false); 
-
+            stitch.transform.position = stitchLocation.transform.position;
         }
         if (PlayerData.mandatoryFightComplete == true && PlayerData.optionalFightComplete == true)
         {

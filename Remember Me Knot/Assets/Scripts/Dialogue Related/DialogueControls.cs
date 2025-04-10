@@ -55,18 +55,22 @@ public class DialogueControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            currentOption = (currentOption + 1) % optionSize;
-            dialogue.SetText(options[currentOption].text);
+          // if (currentOption == 0)
+          //      currentOption = optionSize + 1;
+          //  else
+           //     currentOption = (Mathf.Abs(currentOption + 1) % optionSize);
+            //currentOption = (currentOption + 1) % optionSize;
+          //  dialogue.SetText(options[currentOption].text);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             //Move to the previous option
-            if (currentOption == 0)
-                currentOption = optionSize - 1;
-            else
-                currentOption = (Mathf.Abs(currentOption - 1) % optionSize);
-
-            dialogue.SetText(options[currentOption].text);
+          //  if (currentOption == 0)
+          //      currentOption = optionSize - 1;
+          //  else
+          //      currentOption = (Mathf.Abs(currentOption - 1) % optionSize);
+//
+         //   dialogue.SetText(options[currentOption].text);
         }
     }
     private void SkipDialogue()
